@@ -19,11 +19,11 @@
       --line: rgba(7, 21, 33, 0.09);
       --line-dark: rgba(255, 255, 255, 0.12);
       --ember: #ff5a1f;
-      --ember-soft: rgba(255, 90, 31, 0.12);
+      --ember-soft: rgba(255, 90, 31, 0.1);
       --glacier: #178a99;
       --glacier-soft: rgba(23, 138, 153, 0.1);
       --card-radius: 14px;
-      --measure: 44rem;
+      --measure: 46rem;
     }
 
     * { box-sizing: border-box; }
@@ -87,7 +87,7 @@
     /* Navigation */
     nav.tab-nav {
       display: flex;
-      gap: 0.35rem;
+      gap: 0.25rem;
       overflow-x: auto;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
@@ -101,9 +101,9 @@
     nav.tab-nav a {
       color: #9eb2be;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
-      padding: 0.8rem 1rem;
+      padding: 0.8rem 0.85rem;
       border-bottom: 3px solid transparent;
       white-space: nowrap;
       transition: color 0.15s ease, border-color 0.15s ease;
@@ -142,11 +142,11 @@
     /* Typography hierarchy */
     h2.pane-heading {
       font-family: "Bebas Neue", sans-serif;
-      font-size: 2rem;
+      font-size: 2.1rem;
       line-height: 1;
       letter-spacing: 0.02em;
       color: var(--deep);
-      margin: 0 0 0.5rem;
+      margin: 0 0 0.4rem;
     }
 
     p.pane-lead {
@@ -173,6 +173,8 @@
     .meta-text {
       font-size: 14px;
       color: var(--muted);
+      margin-top: -0.4rem;
+      margin-bottom: 1rem;
     }
 
     /* Cards */
@@ -185,6 +187,9 @@
     @media (min-width: 640px) {
       .card-grid.cols-2 {
         grid-template-columns: 1fr 1fr;
+      }
+      .card-grid.cols-3 {
+        grid-template-columns: 1fr 1fr 1fr;
       }
     }
 
@@ -208,7 +213,7 @@
 
     .badge {
       display: inline-block;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       padding: 0.2rem 0.55rem;
       border-radius: 6px;
@@ -331,7 +336,7 @@
     table.data-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 15px;
+      font-size: 14.5px;
       text-align: left;
     }
 
@@ -347,7 +352,7 @@
     }
 
     table.data-table td {
-      padding: 0.85rem 1rem;
+      padding: 0.8rem 1rem;
       border-bottom: 1px solid var(--line);
       vertical-align: middle;
     }
@@ -445,6 +450,41 @@
       color: var(--ink);
     }
 
+    /* Source link list */
+    .source-list {
+      display: grid;
+      gap: 0.6rem;
+      margin: 1.4rem 0;
+    }
+
+    .source-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      background: var(--snow);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 14.5px;
+      transition: border-color 0.15s ease, background-color 0.15s ease;
+    }
+
+    .source-item:hover {
+      border-color: var(--ember);
+      background: #fffdfb;
+    }
+
+    .source-item .source-title {
+      font-weight: 600;
+    }
+
+    .source-item .source-host {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
     /* Footer */
     footer.site-footer {
       max-width: var(--measure);
@@ -468,7 +508,9 @@
         <a href="#plan" class="active" id="tab-plan">Plan</a>
         <a href="#houses" id="tab-houses">Houses</a>
         <a href="#travel" id="tab-travel">Travel</a>
-        <a href="#kite" id="tab-kite">Kite &amp; Wind</a>
+        <a href="#kitesize" id="tab-kitesize">Kite Size Guide</a>
+        <a href="#rentals" id="tab-rentals">Rentals</a>
+        <a href="#schools" id="tab-schools">Schools</a>
         <a href="#money" id="tab-money">Money</a>
         <a href="#pack" id="tab-pack">Pack List</a>
       </nav>
@@ -480,7 +522,7 @@
     <!-- 1 PLAN -->
     <section id="plan" class="tab-section active">
       <h2 class="pane-heading">Expedition Plan</h2>
-      <p class="pane-lead">Eight nights across two base houses. Drive daily to follow the wind.</p>
+      <p class="pane-lead">Eight nights across two base houses. Drive daily along Route 7 to follow the wind.</p>
 
       <p>Hardangervidda sits between eastern and western Norwegian weather systems. When one valley is calm, another runs at 20 knots. Last spring the crew covered 100 kilometers in a single day across frozen lakes and rolling terrain.</p>
 
@@ -493,22 +535,22 @@
         <div class="info-card highlight">
           <span class="badge ember">House B · Haugastøl</span>
           <h4>Hegghytta (Max 8)</h4>
-          <p class="meta-text">Booked by Dienke. Four bedrooms, one bathroom. Three couples plus Carola and Floor.</p>
+          <p class="meta-text">Booked by Dienke. Four bedrooms, one bathroom. Exactly eight riders, beds not pre-assigned.</p>
         </div>
       </div>
 
       <div class="people-summary">
         <div class="people-row">
-          <div class="people-label">Couples (Three Pairs)</div>
-          <div class="people-names">Berend &amp; Dienke · Merel &amp; Roel · Pieter &amp; Hanne</div>
+          <div class="people-label">House B Riders (Hegghytta · Eight Guests)</div>
+          <div class="people-names">Caro · Flora · Merel · Roelien · Dienke · Berend · Hanne · Pieter</div>
         </div>
         <div class="people-row">
-          <div class="people-label">Individuals (Seven Riders)</div>
-          <div class="people-names">Carola · Floor · Finn · Sebastian · Stef · Enno · Cees</div>
+          <div class="people-label">House A Riders (Mormorstølen · Five Guests)</div>
+          <div class="people-names">Finn · Sebastian · Stef · Enno · Cees</div>
         </div>
         <div class="people-row">
-          <div class="people-label">Status</div>
-          <div class="people-names">13 confirmed riders. House B is capped at 8. Any additional commitment (such as André) joins House A.</div>
+          <div class="people-label">Capacity Policy</div>
+          <div class="people-names">House B is capped at 8 riders. House A has spare room up to 10 guests for any late addition such as André.</div>
         </div>
       </div>
 
@@ -544,70 +586,27 @@
         </div>
       </a>
 
+      <div class="source-list">
+        <a class="source-item" href="https://www.haugastol.no/en/spots" target="_blank" rel="noopener">
+          <span class="source-title">Spots Directory (Ørteren, Fagerheim, Halne, Kraekkja)</span>
+          <span class="source-host">haugastol.no ↗</span>
+        </a>
+        <a class="source-item" href="https://www.haugastol.no/en/wind-apps" target="_blank" rel="noopener">
+          <span class="source-title">Live Weather Stations &amp; Mountain Webcams</span>
+          <span class="source-host">haugastol.no ↗</span>
+        </a>
+      </div>
+
       <div class="action-banner">
         <div class="action-label">Next Action</div>
-        <div class="action-text">Review your room allocation in the Houses tab and confirm your rental needs.</div>
+        <div class="action-text">Review your cabin details in the Houses tab and confirm rental kit requests.</div>
       </div>
     </section>
 
     <!-- 2 HOUSES -->
     <section id="houses" class="tab-section">
       <h2 class="pane-heading">Cabin Accommodations</h2>
-      <p class="pane-lead">Both properties are reserved. House B is capped at eight guests.</p>
-
-      <h3 class="section-title">House A: Mormorstølen (Ustaoset)</h3>
-      <p>Spacious mountain home with five private rooms, two full bathrooms, and an electric sauna. Located 18 minutes east of the Fagerheim launch.</p>
-
-      <a class="embed-card" href="https://www.airbnb.ch/rooms/11332520" target="_blank" rel="noopener">
-        <img class="embed-thumb" src="https://a0.muscache.com/im/pictures/miso/Hosting-11332520/original/35698b0b-7c6c-4a10-9d34-1428effd90dc.jpeg?im_w=720" alt="Mormorstølen Ustaoset Airbnb" />
-        <div class="embed-body">
-          <div class="embed-source">Airbnb 11332520 · Host Paal</div>
-          <div class="embed-title">Mormorstølen Cabin in Ustaoset</div>
-          <div class="embed-desc">Rating 4.94 (50 reviews) · 5 bedrooms · 8 beds · 2 bathrooms · Private sauna.</div>
-          <div class="embed-action">View Airbnb listing ↗</div>
-        </div>
-      </a>
-
-      <div class="table-wrap">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Room</th>
-              <th>Bed Configuration</th>
-              <th>Assignment</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Room 1</td>
-              <td>1 King bed</td>
-              <td>Empty, or reserved for one individual alone</td>
-            </tr>
-            <tr>
-              <td>Room 2</td>
-              <td>1 Double bed</td>
-              <td>One individual alone</td>
-            </tr>
-            <tr>
-              <td>Room 3</td>
-              <td>2 Twin beds</td>
-              <td>Two individuals (Finn, Sebastian, Stef, Enno, Cees)</td>
-            </tr>
-            <tr>
-              <td>Room 4</td>
-              <td>1 Bunk bed</td>
-              <td>Unoccupied</td>
-            </tr>
-            <tr>
-              <td>Room 5</td>
-              <td>2 Twin beds</td>
-              <td>Two individuals</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="meta-text">Cost: 400 CHF per person based on 6 guests (recalculated to ~€510 with 5 individuals). Any late joining individual sleeps here.</p>
+      <p class="pane-lead">Both properties are confirmed and reserved. Beds are not pre-assigned in advance.</p>
 
       <h3 class="section-title">House B: Hegghytta (Haugastøl)</h3>
       <p>Cozy traditional lodge situated two minutes from Haugastøl Turistsenter. Four bedrooms and one bathroom. Strictly limited to eight guests.</p>
@@ -622,37 +621,51 @@
         </div>
       </a>
 
+      <div class="info-card highlight" style="margin: 1.2rem 0;">
+        <span class="badge ember">House B Roster (Eight Guests)</span>
+        <h4>Caro · Flora · Merel · Roelien · Dienke · Berend · Hanne · Pieter</h4>
+        <p class="meta-text" style="margin-bottom: 0;">Capacity configuration: Four bedrooms comfortably host three couples (Dienke &amp; Berend, Merel &amp; Roelien, Hanne &amp; Pieter) and two individuals (Caro &amp; Flora). Beds will not be pre-assigned before arrival.</p>
+      </div>
+
       <div class="table-wrap">
         <table class="data-table">
           <thead>
             <tr>
-              <th>Requirement</th>
-              <th>Current Status</th>
+              <th>House B Parameter</th>
+              <th>Specification</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Three Couple Bedrooms</td>
-              <td>Berend &amp; Dienke, Merel &amp; Roel, Pieter &amp; Hanne</td>
+              <td>Total Confirmed Guests</td>
+              <td>Exactly 8 riders (strictly capped at 8)</td>
             </tr>
             <tr>
-              <td>Fourth Bedroom</td>
-              <td>Twin beds for Carola and Floor</td>
+              <td>Room Configuration</td>
+              <td>4 bedrooms across two levels</td>
             </tr>
             <tr>
-              <td>Bathroom Capacity</td>
-              <td>One shower for eight riders. Morning and evening queues apply</td>
+              <td>Sleeping Breakdown</td>
+              <td>3 double/queen setups for couples + twin/bunk beds for Caro and Flora</td>
             </tr>
             <tr>
-              <td>Linens &amp; Cleaning</td>
-              <td>Guests must bring bed sheets and bath towels. Self-cleaning at check-out</td>
+              <td>Bathroom Facility</td>
+              <td>1 shower and toilet. Staggered morning and post-ride queues apply</td>
+            </tr>
+            <tr>
+              <td>Linens &amp; Towels</td>
+              <td>Guests must pack their own bed sheets, pillowcases, and bath towels</td>
+            </tr>
+            <tr>
+              <td>End of Stay Cleaning</td>
+              <td>Self-cleaning mandatory before Sunday checkout</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <a class="embed-card" href="https://maps.app.goo.gl/cbXsY8toEn8jiG7Y8" target="_blank" rel="noopener">
-        <img class="embed-thumb" src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22400%22%20height%3D%22240%22%3E%0A%20%20%3Crect%20width%3D%22400%22%20height%3D%22240%22%20fill%3D%22%230a1d2c%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M%200%20160%20Q%20120%20140%20220%20170%20T%20400%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20opacity%3D%220.4%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%22140%22%20cy%3D%22145%22%20r%3D%228%22%20fill%3D%22%23ff5a1f%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%3Ctext%20x%3D%22140%22%20y%3D%22120%22%20fill%3D%22%23ffffff%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%3EHOUSE%20B%20%28HEGGHYTTA%29%3C%2Ftext%3E%0A%20%20%3Ccircle%20cx%3D%22280%22%20cy%3D%22160%22%20r%3D%228%22%20fill%3D%22%23178a99%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%3Ctext%20x%3D%22280%22%20y%3D%22195%22%20fill%3D%22%23ffffff%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%3EHOUSE%20A%20%28USTAOSET%29%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22210%22%20y%3D%22145%22%20fill%3D%22%23ff5a1f%22%20font-family%3D%22sans-serif%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%3E11%20KM%3C%2Ftext%3E%0A%3C%2Fsvg%3E" alt="Cabin map thumbnail" />
+        <img class="embed-thumb" src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22400%22%20height%3D%22240%22%3E%0A%20%20%3Crect%20width%3D%22400%22%20height%3D%22240%22%20fill%3D%22%230a1d2c%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M%200%20160%20Q%20120%20140%20220%20170%20T%20400%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20opacity%3D%220.4%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%22140%22%20cy%3D%22145%22%20r%3D%228%22%20fill%3D%22%23ff5a1f%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%3Ctext%20x%3D%22140%22%20y%3D%22120%22%20fill%3D%22%23ffffff%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%3EHEGGHYTTA%20%28HAUGAST%C3%98L%29%3C%2Ftext%3E%0A%20%20%3Ccircle%20cx%3D%22280%22%20cy%3D%22160%22%20r%3D%228%22%20fill%3D%22%23178a99%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%3Ctext%20x%3D%22280%22%20y%3D%22195%22%20fill%3D%22%23ffffff%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%3EMORMORST%C3%98LEN%20%28USTAOSET%29%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22210%22%20y%3D%22145%22%20fill%3D%22%23ff5a1f%22%20font-family%3D%22sans-serif%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%3E11%20KM%20APART%3C%2Ftext%3E%0A%3C%2Fsvg%3E" alt="Cabin map thumbnail" />
         <div class="embed-body">
           <div class="embed-source">Google Maps · Location Overview</div>
           <div class="embed-title">Cabin Map: Hegghytta &amp; Surrounding Access</div>
@@ -661,16 +674,75 @@
         </div>
       </a>
 
+      <h3 class="section-title">House A: Mormorstølen (Ustaoset)</h3>
+      <p>Spacious mountain home with five private rooms, two full bathrooms, and an electric sauna. Located 18 minutes east of the Fagerheim launch.</p>
+
+      <a class="embed-card" href="https://www.airbnb.ch/rooms/11332520" target="_blank" rel="noopener">
+        <img class="embed-thumb" src="https://a0.muscache.com/im/pictures/miso/Hosting-11332520/original/35698b0b-7c6c-4a10-9d34-1428effd90dc.jpeg?im_w=720" alt="Mormorstølen Ustaoset Airbnb" />
+        <div class="embed-body">
+          <div class="embed-source">Airbnb 11332520 · Host Paal</div>
+          <div class="embed-title">Mormorstølen Cabin in Ustaoset</div>
+          <div class="embed-desc">Rating 4.94 (50 reviews) · 5 bedrooms · 8 beds · 2 bathrooms · Private sauna.</div>
+          <div class="embed-action">View Airbnb listing ↗</div>
+        </div>
+      </a>
+
+      <div class="info-card highlight" style="margin: 1.2rem 0;">
+        <span class="badge dark">House A Roster (Five Guests)</span>
+        <h4>Finn · Sebastian · Stef · Enno · Cees</h4>
+        <p class="meta-text" style="margin-bottom: 0;">Capacity configuration: Five private bedrooms for five individuals. Ample room and beds, zero crowd pressure. King room and extra bunks remain unoccupied unless a late joining rider commits.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>House A Parameter</th>
+              <th>Specification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Total Confirmed Guests</td>
+              <td>5 individuals</td>
+            </tr>
+            <tr>
+              <td>Bedrooms &amp; Beds</td>
+              <td>5 bedrooms with 8 beds in total (1 king, 1 double, 4 twin, 1 bunk)</td>
+            </tr>
+            <tr>
+              <td>Bathroom Facility</td>
+              <td>2 full bathrooms plus sauna</td>
+            </tr>
+            <tr>
+              <td>Base Price Benchmark</td>
+              <td>400 CHF per person based on 6 riders (~€510 recalculated for 5 riders)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="source-list">
+        <a class="source-item" href="https://www.airbnb.ch/rooms/11332520" target="_blank" rel="noopener">
+          <span class="source-title">Mormorstølen Listing &amp; Guest Reviews</span>
+          <span class="source-host">airbnb.ch ↗</span>
+        </a>
+        <a class="source-item" href="https://www.airbnb.es/rooms/1462527939250507275" target="_blank" rel="noopener">
+          <span class="source-title">Hegghytta Listing Details</span>
+          <span class="source-host">airbnb.es ↗</span>
+        </a>
+      </div>
+
       <div class="action-banner">
         <div class="action-label">Next Action</div>
-        <div class="action-text">Dienke confirms the exact bed layout with Jan-Erik to verify three double mattresses exist.</div>
+        <div class="action-text">Dienke confirms the exact double bed count with Jan-Erik to verify three double mattresses exist.</div>
       </div>
     </section>
 
     <!-- 3 TRAVEL -->
     <section id="travel" class="tab-section">
       <h2 class="pane-heading">Flights &amp; Mountain Route</h2>
-      <p class="pane-lead">Flights to Oslo Gardermoen (OSL), followed by a 3.5 hour mountain drive.</p>
+      <p class="pane-lead">Flights to Oslo Gardermoen (OSL), followed by a 3.5 hour mountain drive along Route 7.</p>
 
       <p>Riders arrive from Barcelona, Amsterdam, and Zurich. Coordinated arrival times keep car rental costs down and prevent long waits at the terminal.</p>
 
@@ -681,23 +753,27 @@
               <th>Departure City</th>
               <th>Riders</th>
               <th>Estimated Return Fare</th>
+              <th>Airlines</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Barcelona (BCN)</td>
-              <td>Berend, Dienke, Roel, Merel, Carola, Floor</td>
+              <td>Berend, Dienke, Roelien, Merel, Caro, Flora</td>
               <td class="num">€120 to €220</td>
+              <td>Norwegian, Vueling, SAS</td>
             </tr>
             <tr>
               <td>Amsterdam (AMS)</td>
               <td>Pieter, Hanne, Dutch crew</td>
               <td class="num">€130 to €200</td>
+              <td>KLM, Norwegian, SAS</td>
             </tr>
             <tr>
               <td>Zurich (ZRH)</td>
               <td>Finn, Sebastian</td>
               <td class="num">500 to 580 CHF</td>
+              <td>SWISS, SAS</td>
             </tr>
           </tbody>
         </table>
@@ -725,103 +801,334 @@
         </div>
       </a>
 
+      <div class="source-list">
+        <a class="source-item" href="https://www.vegvesen.no/trafikk" target="_blank" rel="noopener">
+          <span class="source-title">Statens Vegvesen Live Highway Traffic Map</span>
+          <span class="source-host">vegvesen.no ↗</span>
+        </a>
+        <a class="source-item" href="https://www.vy.no/en" target="_blank" rel="noopener">
+          <span class="source-title">Vy Train Schedule (Oslo to Haugastøl / Finse)</span>
+          <span class="source-host">vy.no ↗</span>
+        </a>
+      </div>
+
       <div class="action-banner">
         <div class="action-label">Next Action</div>
         <div class="action-text">Post your proposed flight arrival window in WhatsApp so we can allocate rental vehicle groups.</div>
       </div>
     </section>
 
-    <!-- 4 KITE & WIND -->
-    <section id="kite" class="tab-section">
-      <h2 class="pane-heading">Kite Gear &amp; Wind Stats</h2>
-      <p class="pane-lead">April delivers reliable sub-zero hardpack snow and consistent frontal winds.</p>
+    <!-- 4 KITE SIZE GUIDE -->
+    <section id="kitesize" class="tab-section">
+      <h2 class="pane-heading">Kite Size &amp; Wind Guide</h2>
+      <p class="pane-lead">Hardpack snow and sub-zero air require completely different kite sizing than summer water.</p>
 
-      <p>Finn logged 75 percent of all riding sessions on a 6 m² kite during the previous season, using an 11 m² kite on lighter days. Single-skin and foil kites pack small and depower immediately on mountain tours.</p>
+      <p>Snowkiting on hardpack has near-zero friction. You do not sink when speed drops, and dense cold air delivers significantly more lift per square meter. A 75 kg rider who rides a 12 m² tube kite on water typically rides an 8 m² single-skin foil or 6 m² tube on hard mountain snow.</p>
 
-      <h3 class="section-title">Finse Weather &amp; Historical Averages</h3>
-
-      <a class="embed-card" href="https://www.windfinder.com/windstatistics/finse_ulvik_hordaland" target="_blank" rel="noopener">
-        <img class="embed-thumb" src="https://cdn.windfinder.net/prod/assets/og_statistic.D3H3MK1w.jpg" alt="Windfinder Finse statistics" />
-        <div class="embed-body">
-          <div class="embed-source">Windfinder · Official Weather Station</div>
-          <div class="embed-title">Finse Station April Wind Statistics</div>
-          <div class="embed-desc">Average speed: 10.7 knots. Average gusts: 16.5 knots. 41 percent of April days record 11 knots or more.</div>
-          <div class="embed-action">Inspect wind charts ↗</div>
+      <h3 class="section-title">Kite Technology Comparison</h3>
+      <div class="card-grid cols-3">
+        <div class="info-card">
+          <span class="badge dark">Single-Skin Foil</span>
+          <h4>Flysurfer Peak / Ozone Explore</h4>
+          <p class="meta-text">Ultra-compact (two fit in one daypack), zero bladder freeze or burst risk, massive instant depower on 5-line B-Safe system. Sized 2 sizes smaller than water tubes.</p>
         </div>
-      </a>
-
-      <a class="embed-card" href="https://www.haugastol.no/en/spots" target="_blank" rel="noopener">
-        <img class="embed-thumb" src="https://www.haugastol.no/og/default.jpg" alt="Snowkite spots on Hardangervidda" />
-        <div class="embed-body">
-          <div class="embed-source">Haugastøl Turistsenter · Spot Map</div>
-          <div class="embed-title">Hardangervidda Snowkite Spots Guide</div>
-          <div class="embed-desc">Detailed guide to Ørteren, Fagerheim, Halne, and Kraekkja launch areas along the road.</div>
-          <div class="embed-action">Explore spot guide ↗</div>
+        <div class="info-card">
+          <span class="badge soft">Closed-Cell Foil</span>
+          <h4>Flysurfer Soul / Ozone Subzero</h4>
+          <p class="meta-text">High aerodynamic glide, strong upwind drive, floaty hangtime. Ram-air cells maintain shape without inflation. Sized 1 size smaller than water tubes.</p>
         </div>
-      </a>
+        <div class="info-card">
+          <span class="badge ember">Inflatable Tube (LEI)</span>
+          <h4>Cabrinha / Ozone Catalyst</h4>
+          <p class="meta-text">Familiar water feel, stable in gusty turbulence. Requires manual pump in sub-zero winds; valve plastics stiffen and fabric can abrade on ice crust.</p>
+        </div>
+      </div>
 
-      <h3 class="section-title">Upwind Rental Package (Fagerheim)</h3>
-      <p>Lenka confirmed package availability at 5,000 NOK (~€463) per week. Each package includes two kites, one harness, and skis or snowboard. Bring your own boots and helmet.</p>
+      <h3 class="section-title">Single-Skin Foil Sizing (Peak 6 / Hardpack)</h3>
+      <p class="meta-text">Calculated from Flysurfer official factory specifications scaled by rider weight: v proportional to sqrt(weight / 75 kg).</p>
 
       <div class="table-wrap">
         <table class="data-table">
           <thead>
             <tr>
-              <th>Wind Range</th>
+              <th>Wind Speed</th>
               <th>55 to 65 kg</th>
               <th>65 to 75 kg</th>
               <th>75 to 85 kg</th>
-              <th>85 to 95 kg</th>
+              <th>85 to 95+ kg</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>8 to 11 knots (Average)</td>
+              <td>6 to 8 kts (Light lull)</td>
+              <td>8 to 11 m²</td>
+              <td>11 m²</td>
+              <td>11 m²</td>
+              <td>11 m² (or Soul 15)</td>
+            </tr>
+            <tr>
+              <td>8 to 11 kts (April average)</td>
               <td>8 m²</td>
               <td>8 to 11 m²</td>
               <td>11 m²</td>
               <td>11 to 13 m²</td>
             </tr>
             <tr>
-              <td>11 to 15 knots (Target)</td>
+              <td>11 to 15 kts (Target sweet spot)</td>
               <td>6 m²</td>
               <td>6 to 8 m²</td>
               <td>8 m²</td>
               <td>8 to 11 m²</td>
             </tr>
             <tr>
-              <td>15 to 20 knots (Strong)</td>
+              <td>15 to 20 kts (Solid mountain wind)</td>
               <td>5 m²</td>
               <td>5 to 6 m²</td>
               <td>6 m²</td>
               <td>6 to 8 m²</td>
             </tr>
+            <tr>
+              <td>20 to 25+ kts (High wind / gusty)</td>
+              <td>4 to 5 m²</td>
+              <td>5 m²</td>
+              <td>5 m²</td>
+              <td>5 to 6 m²</td>
+            </tr>
           </tbody>
         </table>
       </div>
 
-      <p class="meta-text">A shared rack functions well when rider weights are distributed across the group. The 8 m² kite is the primary bottleneck.</p>
+      <h3 class="section-title">Surface Condition Modifiers</h3>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Snow Surface Type</th>
+              <th>Friction Level</th>
+              <th>Sizing Adjustment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wind-crust / hardpack / frozen lake ice</td>
+              <td>Near zero drag</td>
+              <td>Standard chart above (or drop 1 size down if new to snow)</td>
+            </tr>
+            <tr>
+              <td>Cold dry powder (10 to 20 cm)</td>
+              <td>Low to medium drag</td>
+              <td>Skis glide easily; snowboards stay in standard chart</td>
+            </tr>
+            <tr>
+              <td>Warm wet spring slush (afternoon melt)</td>
+              <td>High resistance</td>
+              <td>Shift one column to the right (add 2 m² or use closed-cell foil)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="section-title">Historical April Wind at Finse</h3>
+      <a class="embed-card" href="https://www.windfinder.com/windstatistics/finse_ulvik_hordaland" target="_blank" rel="noopener">
+        <img class="embed-thumb" src="https://cdn.windfinder.net/prod/assets/og_statistic.D3H3MK1w.jpg" alt="Windfinder Finse statistics" />
+        <div class="embed-body">
+          <div class="embed-source">Windfinder · Official Weather Station</div>
+          <div class="embed-title">Finse Station April Wind Statistics</div>
+          <div class="embed-desc">Average speed: 10.7 knots. Average gusts: 16.5 knots. 41 percent of April observations record 11 knots or more.</div>
+          <div class="embed-action">Inspect wind charts ↗</div>
+        </div>
+      </a>
+
+      <div class="source-list">
+        <a class="source-item" href="https://b2b.flysurfer.com/media/pdf/a7/ae/57/PEAK6-Factsheet-EN.pdf" target="_blank" rel="noopener">
+          <span class="source-title">Flysurfer Peak 6 Official Factsheet &amp; Wind Ranges</span>
+          <span class="source-host">flysurfer.com ↗</span>
+        </a>
+        <a class="source-item" href="https://flysurfer.cz/wp-content/uploads/downloads/FS24-PEAK6-User-Manual-EN.pdf" target="_blank" rel="noopener">
+          <span class="source-title">Flysurfer Peak 6 User Manual (40 to 120 kg guidelines)</span>
+          <span class="source-host">flysurfer.cz ↗</span>
+        </a>
+        <a class="source-item" href="https://www.mackiteboarding.com/snowkitefaq.htm" target="_blank" rel="noopener">
+          <span class="source-title">MacKite Snowkite Sizing FAQ (Why snow uses smaller kites)</span>
+          <span class="source-host">mackiteboarding.com ↗</span>
+        </a>
+        <a class="source-item" href="https://thekitespot.com/guide-to-snowkiting/" target="_blank" rel="noopener">
+          <span class="source-title">The Kite Spot: Complete Guide to Snowkiting Gear &amp; Physics</span>
+          <span class="source-host">thekitespot.com ↗</span>
+        </a>
+      </div>
+
+      <div class="action-banner">
+        <div class="action-label">Next Action</div>
+        <div class="action-text">Identify your target quiver size based on your weight and check available rentals in the next tab.</div>
+      </div>
+    </section>
+
+    <!-- 5 RENTALS -->
+    <section id="rentals" class="tab-section">
+      <h2 class="pane-heading">Equipment Rentals</h2>
+      <p class="pane-lead">Verified local providers offering kite, harness, and ski or snowboard rentals on the plateau.</p>
+
+      <p>There is no traditional walk-in retail hire shop on the open plateau. Equipment is provided by camp bases and schools that operate on site during our dates.</p>
+
+      <h3 class="section-title">1. Upwind Snowkiting (Fagerheim Base)</h3>
+      <p>Operates directly from Fagerheim Fjellstugu on Route 7. Verified email confirmation for our week (3 to 11 April 2027) with Lenka Simkova.</p>
+
+      <a class="embed-card" href="https://www.upwindsnowkiting.com/snowkiting-camp" target="_blank" rel="noopener">
+        <div class="embed-body">
+          <div class="embed-source">Upwind Snowkiting · Fagerheim Base</div>
+          <div class="embed-title">Full Mountain Snowkiting Equipment Package</div>
+          <div class="embed-desc">Package fee: 5,000 NOK (~€463) per week. Includes two kites, one harness, bar, and skis or snowboard. Bring your own boots and helmet.</div>
+          <div class="embed-action">View Upwind camp details ↗</div>
+        </div>
+      </a>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Gear Type</th>
+              <th>Available Models &amp; Sizes</th>
+              <th>Suitability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Single-Skin Foils</td>
+              <td>Flysurfer Peak (5, 6, 8, 11 m²)</td>
+              <td>Mountain touring, instant depower, best for gusty conditions</td>
+            </tr>
+            <tr>
+              <td>Closed-Cell Foils</td>
+              <td>Flysurfer Soul (8, 10, 12, 15 m²)</td>
+              <td>Light wind cruising and plateau gliding</td>
+            </tr>
+            <tr>
+              <td>Inflatable Tube Kites</td>
+              <td>Ozone Catalyst and Enduro (6, 8 m²)</td>
+              <td>High-wind survival and familiar water handling</td>
+            </tr>
+            <tr>
+              <td>Accessories Included</td>
+              <td>Harness with leash + skis or snowboard</td>
+              <td>Riders supply their own fitted ski or snowboard boots</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="meta-text">Contact: snowkiting@dagalifjellpark.no or booking@upwindsnowkiting.com. Phone: +47 980 98 975.</p>
+
+      <h3 class="section-title">2. Kitekurs.no (Haugastøl Turistsenter)</h3>
+      <p>Stationed directly at Haugastøl Turistsenter during our start and end weekends (3–4 April and 10–11 April 2027). They rent complete tube quivers to independent riders upon request.</p>
 
       <a class="embed-card" href="https://kitekurs.no/sporsmalogsvar/" target="_blank" rel="noopener">
         <img class="embed-thumb" src="https://kitekurs.no/wp-content/uploads/2017/08/IMG_7753.jpg" alt="Kitekurs tube kite rentals" />
         <div class="embed-body">
-          <div class="embed-source">Kitekurs.no · Weekend On-Site Support</div>
-          <div class="embed-title">Tube Kite Rentals &amp; Courses at Haugastøl</div>
-          <div class="embed-desc">On-site support during the weekends of 3–4 April and 10–11 April. Call +47 452 92 084.</div>
-          <div class="embed-action">Read rental FAQ ↗</div>
+          <div class="embed-source">Kitekurs.no · Haugastøl Hub</div>
+          <div class="embed-title">Independent Snowkite Equipment Hire</div>
+          <div class="embed-desc">Official confirmation: "Ja, vi leier ut utstyr. Oppgi erfaring og dato." Brand new 2026/2027 Cabrinha and Ozone tube kites (4 to 15 m²).</div>
+          <div class="embed-action">Open rental FAQ ↗</div>
         </div>
       </a>
 
+      <p class="meta-text">Phone: +47 452 92 084. Email: post@kitekurs.no. Coordinate weekday collection in advance.</p>
+
+      <h3 class="section-title">3. Geilo Ski Shop (Equipment Delivery to Haugastøl)</h3>
+      <p>If you prefer to bring your own kites on the airplane but want to avoid flying heavy skis or snowboards, Geilo Ski Shop delivers pre-ordered skis and boards directly to Haugastøl Turistsenter.</p>
+
+      <div class="source-list">
+        <a class="source-item" href="https://www.geiloskishop.no/en/home" target="_blank" rel="noopener">
+          <span class="source-title">Geilo Ski Shop Rental &amp; Delivery Service</span>
+          <span class="source-host">geiloskishop.no ↗</span>
+        </a>
+        <a class="source-item" href="https://www.haugastol.no/en/ozone" target="_blank" rel="noopener">
+          <span class="source-title">Haugastøl 1000 MOH Ozone Gear Sales &amp; Replacement Parts</span>
+          <span class="source-host">haugastol.no ↗</span>
+        </a>
+        <a class="source-item" href="https://www.kitesurfing.no/en/winter/rentals/" target="_blank" rel="noopener">
+          <span class="source-title">Kitesurfing.no Regional Daily Rental Benchmark (1,000 NOK/day)</span>
+          <span class="source-host">kitesurfing.no ↗</span>
+        </a>
+      </div>
+
       <div class="action-banner">
         <div class="action-label">Next Action</div>
-        <div class="action-text">Riders needing rented gear must send their weight (kg) and ski or snowboard choice to Lenka.</div>
+        <div class="action-text">Send your rider weight and gear selection to Lenka at Upwind to reserve your quiver.</div>
       </div>
     </section>
 
-    <!-- 5 MONEY -->
+    <!-- 6 SCHOOLS -->
+    <section id="schools" class="tab-section">
+      <h2 class="pane-heading">Kite Schools &amp; Lessons</h2>
+      <p class="pane-lead">Professional weekend courses and progression clinics for riders new to mountain terrain.</p>
+
+      <p>Snowkiting has a significantly faster learning curve than water kitesurfing because you do not need energy to float. Riders with basic water experience usually become independent within their first day on snow.</p>
+
+      <h3 class="section-title">Weekend Courses at Haugastøl (3–4 &amp; 10–11 April 2027)</h3>
+
+      <a class="embed-card" href="https://kitekurs.no/produkt/kitekurs-haugstol/" target="_blank" rel="noopener">
+        <img class="embed-thumb" src="https://kitekurs.no/wp-content/uploads/2017/08/IMG_7753.jpg" alt="Kitekurs Haugastol course" />
+        <div class="embed-body">
+          <div class="embed-source">Kitekurs.no · 20+ Years on the Plateau</div>
+          <div class="embed-title">Beginner to Intermediate Weekend Course</div>
+          <div class="embed-desc">Complete two-day course based at Haugastøl. Includes modern Cabrinha and Ozone kites, bars, and harnesses. Bring your own skis or board.</div>
+          <div class="embed-action">View course booking ↗</div>
+        </div>
+      </a>
+
+      <a class="embed-card" href="https://vindskolen.no/en/snowkite-course-hardangervidda-weekend" target="_blank" rel="noopener">
+        <div class="embed-body">
+          <div class="embed-source">Vindskolen · Haugastøl Weekend Clinic</div>
+          <div class="embed-title">Two-Day Weekend Snowkite Course</div>
+          <div class="embed-desc">Course fee: From 3,750 NOK. Covers wind window safety, line management in snow, self-rescue, and terrain navigation.</div>
+          <div class="embed-action">Open course details ↗</div>
+        </div>
+      </a>
+
+      <h3 class="section-title">Finse Glacier &amp; Mountain Courses</h3>
+
+      <a class="embed-card" href="https://www.skikite.com/niva1/" target="_blank" rel="noopener">
+        <div class="embed-body">
+          <div class="embed-source">Skikite · High Mountain Training</div>
+          <div class="embed-title">Level 1 Snowkite Course at Finse (9–11 April 2027)</div>
+          <div class="embed-desc">Course fee: 3,950 NOK. Train access only to Finse station (1,222 meters above sea level). Lodging at Finsehytta or Hotell Finse 1222.</div>
+          <div class="embed-action">Read course schedule ↗</div>
+        </div>
+      </a>
+
+      <h3 class="section-title">Local Knowledge &amp; Guidance</h3>
+      <a class="embed-card" href="https://www.haugastol.no/en/kite-course" target="_blank" rel="noopener">
+        <img class="embed-thumb" src="https://www.haugastol.no/og/default.jpg" alt="Haugastøl course information" />
+        <div class="embed-body">
+          <div class="embed-source">Haugastøl 1000 MOH · Coaching Hub</div>
+          <div class="embed-title">Mountain Advice with Bjørn Kaupang</div>
+          <div class="embed-desc">Access 25+ years of plateau knowledge from six-time world champion Bjørn Kaupang on spot selection, mountain weather, and snow safety.</div>
+          <div class="embed-action">View coaching overview ↗</div>
+        </div>
+      </a>
+
+      <div class="source-list">
+        <a class="source-item" href="https://www.skikite.com/kurskalender/" target="_blank" rel="noopener">
+          <span class="source-title">Skikite Complete Winter Course Calendar</span>
+          <span class="source-host">skikite.com ↗</span>
+        </a>
+        <a class="source-item" href="https://www.dnt.no/hytter/betjente/finsehytta/english/activities/kiting-pa-finse/" target="_blank" rel="noopener">
+          <span class="source-title">Norwegian Trekking Association (DNT) Finse Kiting Guide</span>
+          <span class="source-host">dnt.no ↗</span>
+        </a>
+      </div>
+
+      <div class="action-banner">
+        <div class="action-label">Next Action</div>
+        <div class="action-text">If anyone in your party desires a weekend refresher course, book early with Kitekurs or Vindskolen.</div>
+      </div>
+    </section>
+
+    <!-- 7 MONEY -->
     <section id="money" class="tab-section">
       <h2 class="pane-heading">Budget &amp; Shared Expenses</h2>
-      <p class="pane-lead">Estimated total spend sits between €1,100 and €1,350 per person.</p>
+      <p class="pane-lead">Estimated total spend sits between €1,100 and €1,350 per person for the eight-night expedition.</p>
 
       <div class="table-wrap">
         <table class="data-table">
@@ -830,46 +1137,71 @@
               <th>Expense Category</th>
               <th>Lean Estimate</th>
               <th>Comfort Estimate</th>
+              <th>Notes &amp; Allocation</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Return Flight</td>
+              <td>Return Flight to OSL</td>
               <td class="num">€100</td>
               <td class="num">€180</td>
+              <td>Booked individually from BCN, AMS, or ZRH</td>
             </tr>
             <tr>
               <td>Sports Luggage / Ski Bag</td>
               <td class="num">€80</td>
               <td class="num">€140</td>
+              <td>Optional if renting skis locally at Upwind</td>
             </tr>
             <tr>
               <td>House A (Mormorstølen pp)</td>
               <td class="num">~€425</td>
               <td class="num">~€510</td>
+              <td>400 CHF pp based on 6 riders; ~€510 with 5 riders</td>
             </tr>
             <tr>
               <td>House B (Hegghytta pp)</td>
               <td class="num">Pending</td>
               <td class="num">Pending</td>
+              <td>Total invoice split equally across 8 riders</td>
             </tr>
             <tr>
-              <td>Shared Cars, Fuel &amp; Tolls</td>
+              <td>Shared Rental Car &amp; Fuel</td>
               <td class="num">€180</td>
               <td class="num">€240</td>
+              <td>Two or three vehicles rented from Oslo Airport</td>
             </tr>
             <tr>
               <td>Groceries &amp; Cabin Meals</td>
               <td class="num">€160</td>
               <td class="num">€220</td>
+              <td>Shared bulk supermarket shopping in Geilo</td>
             </tr>
             <tr>
               <td>Rental Quiver (Upwind, optional)</td>
               <td class="num">5,000 NOK (~€463)</td>
               <td class="num">5,000 NOK (~€463)</td>
+              <td>Includes 2 kites, harness, and skis/snowboard</td>
+            </tr>
+            <tr>
+              <td><strong>Estimated Total All-In</strong></td>
+              <td class="num"><strong>~€1,100</strong></td>
+              <td class="num"><strong>~€1,350</strong></td>
+              <td>Excludes optional personal gear rental</td>
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <div class="source-list">
+        <a class="source-item" href="https://www.airbnb.es/rooms/1462527939250507275" target="_blank" rel="noopener">
+          <span class="source-title">Hegghytta Booking Reference</span>
+          <span class="source-host">airbnb.es ↗</span>
+        </a>
+        <a class="source-item" href="https://www.airbnb.ch/rooms/11332520" target="_blank" rel="noopener">
+          <span class="source-title">Mormorstølen Booking Reference</span>
+          <span class="source-host">airbnb.ch ↗</span>
+        </a>
       </div>
 
       <div class="action-banner">
@@ -878,25 +1210,32 @@
       </div>
     </section>
 
-    <!-- 6 PACK LIST -->
+    <!-- 8 PACK LIST -->
     <section id="pack" class="tab-section">
       <h2 class="pane-heading">Gear &amp; Packing Checklist</h2>
-      <p class="pane-lead">Sub-zero mountain environment with rapid weather transitions.</p>
+      <p class="pane-lead">Sub-zero high plateau mountain environment with rapid weather transitions.</p>
 
-      <h3 class="section-title">Personal Gear</h3>
+      <h3 class="section-title">Personal Riding Equipment</h3>
       <ul class="check-list">
-        <li>Ski or snowboard boots (bring your own boots even if renting skis locally)</li>
+        <li>Ski or snowboard boots (bring your own fitted boots even if renting skis locally)</li>
         <li>Kite harness with safety leash and line cutter</li>
         <li>Certified ski or snowboard helmet and tinted storm goggles with spare low-light lens</li>
-        <li>Windproof hard-shell jacket and pants</li>
-        <li>Thermal merino base layers (minimum three sets) and thick fleece mid-layer</li>
-        <li>Heavy down or synthetic puffy jacket for stationary wind pauses</li>
+        <li>Windproof hard-shell jacket and pants with storm collar and snow gaiters</li>
+        <li>Thermal merino base layers (minimum three full sets) and thick fleece mid-layer</li>
+        <li>Heavy down or synthetic puffy jacket for stationary mountain wind pauses</li>
         <li>Thin technical gloves for line handling plus heavy insulated winter mittens</li>
-        <li>Hegghytta guests: Bring your own fitted sheet, duvet cover, pillowcase, and bath towel</li>
         <li>Sunscreen (SPF 50) and polarized sunglasses for high plateau UV reflection</li>
       </ul>
 
-      <h3 class="section-title">Backcountry Safety Kit</h3>
+      <h3 class="section-title">Cabin &amp; Living Requirements</h3>
+      <ul class="check-list">
+        <li><strong>Hegghytta guests (House B):</strong> Bring your own fitted bed sheet, duvet cover, pillowcase, and bath towel</li>
+        <li>Warm indoor loungewear, wool socks, and cabin slippers</li>
+        <li>Personal toiletries, blister kit, and personal medications</li>
+        <li>European power adapters and charging cables</li>
+      </ul>
+
+      <h3 class="section-title">Backcountry &amp; Mountain Safety Kit</h3>
       <ul class="check-list">
         <li>Avalanche transceiver, aluminum probe, and metal snow shovel per vehicle</li>
         <li>Touring skins, splitboard, or snowshoes for rescue return if wind drops 10 km out</li>
@@ -907,12 +1246,23 @@
       <a class="embed-card" href="https://www.haugastol.no/en/snowkiting" target="_blank" rel="noopener">
         <img class="embed-thumb" src="https://www.haugastol.no/og/default.jpg" alt="Hardangervidda safety guidelines" />
         <div class="embed-body">
-          <div class="embed-source">Norwegian National Park Authority</div>
+          <div class="embed-source">Norwegian National Park Authority &amp; Oslo Kiteklubb</div>
           <div class="embed-title">Plateau Safety Regulations &amp; Wildlife Boundaries</div>
           <div class="embed-desc">Kite at least 150 meters away from public roads. Do not approach or disturb wild reindeer herds.</div>
           <div class="embed-action">Read national park rules ↗</div>
         </div>
       </a>
+
+      <div class="source-list">
+        <a class="source-item" href="https://www.haugastol.no/en/snowkiting" target="_blank" rel="noopener">
+          <span class="source-title">Oslo Kiteklubb Ground Rules for Hardangervidda</span>
+          <span class="source-host">haugastol.no ↗</span>
+        </a>
+        <a class="source-item" href="https://www.haugastol.no/en/wind-apps" target="_blank" rel="noopener">
+          <span class="source-title">Mobile Road &amp; Wind Apps for Offline Plateau Navigation</span>
+          <span class="source-host">haugastol.no ↗</span>
+        </a>
+      </div>
 
       <div class="action-banner">
         <div class="action-label">Next Action</div>
