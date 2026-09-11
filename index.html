@@ -40,13 +40,31 @@
 
     /* Top banner */
     header.site-header {
-      background: var(--deep);
+      position: relative;
+      background-color: var(--deep);
+      background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=75');
+      background-size: cover;
+      background-position: center 35%;
+      background-repeat: no-repeat;
       color: var(--ice);
-      padding: 2.4rem 1.4rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2.6rem 1.4rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      transition: background-image 0.45s ease-in-out;
+      overflow: hidden;
+    }
+
+    header.site-header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, rgba(7, 21, 33, 0.74) 0%, rgba(7, 21, 33, 0.88) 60%, rgba(7, 21, 33, 0.98) 100%);
+      pointer-events: none;
+      z-index: 1;
     }
 
     .header-inner {
+      position: relative;
+      z-index: 2;
       max-width: var(--measure);
       margin: 0 auto;
     }
@@ -561,6 +579,148 @@
       color: var(--muted);
     }
 
+    /* Visual Photo Feature Cards */
+    .photo-feature {
+      position: relative;
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      margin: 1.4rem 0;
+      box-shadow: 0 4px 18px rgba(7, 21, 33, 0.08);
+      border: 1px solid var(--line);
+      background: var(--deep);
+    }
+
+    .photo-feature img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .photo-feature:hover img {
+      transform: scale(1.02);
+    }
+
+    .photo-caption {
+      padding: 0.95rem 1.2rem;
+      background: #ffffff;
+      font-size: 14px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .photo-caption strong {
+      color: var(--deep);
+    }
+
+    /* Aurora Stat Grid */
+    .aurora-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin: 1.4rem 0 1.8rem;
+    }
+
+    .aurora-stat-box {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1.2rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(7, 21, 33, 0.03);
+    }
+
+    .aurora-stat-num {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 2.3rem;
+      line-height: 1;
+      color: var(--glacier);
+      margin-bottom: 0.35rem;
+    }
+
+    .aurora-stat-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .aurora-stat-sub {
+      font-size: 12.5px;
+      color: var(--ink);
+    }
+
+    /* Atmospheric Story Card */
+    .story-card {
+      background: linear-gradient(145deg, #071521 0%, #0b2233 100%);
+      color: #e6f1f8;
+      border-radius: var(--card-radius);
+      padding: 1.8rem 1.6rem;
+      margin: 1.8rem 0;
+      border: 1px solid rgba(23, 138, 153, 0.35);
+      box-shadow: 0 8px 28px rgba(7, 21, 33, 0.22);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-card::before {
+      content: "";
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 150px; height: 150px;
+      background: radial-gradient(circle, rgba(74, 222, 128, 0.22) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .story-tag {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(74, 222, 128, 0.15);
+      color: #4ade80;
+      border: 1px solid rgba(74, 222, 128, 0.35);
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      margin-bottom: 0.9rem;
+    }
+
+    .story-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 1rem;
+    }
+
+    .story-card p {
+      font-size: 15px;
+      line-height: 1.68;
+      color: #cbdce7;
+      margin-bottom: 1rem;
+    }
+
+    .story-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .story-dialogue {
+      border-left: 3px solid #4ade80;
+      padding-left: 1rem;
+      margin: 1.1rem 0;
+      font-style: italic;
+      color: #f1f8fc;
+    }
+
     /* Footer */
     footer.site-footer {
       max-width: var(--measure);
@@ -587,6 +747,7 @@
         <a href="#kitesize" id="tab-kitesize">Kite Size Guide</a>
         <a href="#rentals" id="tab-rentals">Rentals</a>
         <a href="#schools" id="tab-schools">Schools</a>
+        <a href="#aurora" id="tab-aurora">Northern Lights</a>
         <a href="#money" id="tab-money">Money</a>
         <a href="#pack" id="tab-pack">Pack List</a>
       </nav>
@@ -610,6 +771,7 @@
         <a href="#kitesize">🪁 Kite Sizing Guide</a>
         <a href="#rentals">🎿 Local Rentals</a>
         <a href="#schools">🎓 Kite Schools</a>
+        <a href="#aurora">🌌 Northern Lights</a>
         <a href="#money">💶 Budget Split</a>
         <a href="#pack">🎒 Packing List</a>
       </div>
@@ -1189,11 +1351,183 @@
 
       <div class="tab-bridge">
         <a href="#rentals" class="prev">← Equipment Rentals</a>
+        <a href="#aurora" class="next">Next: Northern Lights ➔</a>
+      </div>
+    </section>
+
+    <!-- 7 NORTHERN LIGHTS -->
+    <section id="aurora" class="tab-section">
+      <h2 class="pane-heading">Aurora Borealis on the High Plateau</h2>
+      <p class="pane-lead">Chasing emerald skies at 1,200 meters. The closing astronomical darkness window of spring.</p>
+
+      <p>Hardangervidda sits at 60.5° North latitude and 1,200 meters elevation. While Tromsø and Lofoten (68°–69°N) are famous for midwinter auroras, the high plateau holds an extraordinary geographic advantage: <strong>it is one of the highest, darkest wilderness vantage points in mainland Europe</strong>. Looking north from <a href="#houses">our cabins</a> across Ustevatnet toward the Hallingskarvet ridge, there are zero towns, streetlights, or light-pollution domes between your eyes and the Arctic horizon.</p>
+
+      <div class="aurora-stat-grid">
+        <div class="aurora-stat-box">
+          <div class="aurora-stat-num">1,200 m</div>
+          <div class="aurora-stat-label">Elevation Vantage</div>
+          <div class="aurora-stat-sub">Above coastal marine fog &amp; low cloud layers</div>
+        </div>
+        <div class="aurora-stat-box">
+          <div class="aurora-stat-num">Bortle 1–2</div>
+          <div class="aurora-stat-label">Dark Sky Rating</div>
+          <div class="aurora-stat-sub">Pure Arctic wilderness darkness to the horizon</div>
+        </div>
+        <div class="aurora-stat-box">
+          <div class="aurora-stat-num">~5.5 Hours</div>
+          <div class="aurora-stat-label">Astronomical Night</div>
+          <div class="aurora-stat-sub">Dark window: 22:15 to 04:00 CEST nightly</div>
+        </div>
+        <div class="aurora-stat-box">
+          <div class="aurora-stat-num">Kp 3.5+</div>
+          <div class="aurora-stat-label">Visibility Threshold</div>
+          <div class="aurora-stat-sub">Green arc at Kp 3; dancing storm at Kp 5+</div>
+        </div>
+      </div>
+
+      <!-- FUNKY IMAGINARY NIGHT STORY -->
+      <div class="story-card">
+        <span class="story-tag">Midnight Expedition Chronicles</span>
+        <h3>The 2:15 AM Sauna Run &amp; The Neon Sky</h3>
+        <p>It is Tuesday night at Mormorstølen. Outside, it is –8°C and dead quiet over the frozen expanse of Ustevatnet. Inside, the crew has just crushed an 80-kilometer backcountry run across the plateau; thirteen plates of elk stew and pasta have been devoured, and Stef is throwing another birch split onto the fireplace embers.</p>
+
+        <p>In the back room, Finn, Seb, and Enno have the electric sauna cranking at 85°C. Pieter is sitting at the timber dining table nursing a cold Mack Arctic beer when his phone buzzes with a high-priority push notification from SpaceWeatherLive:</p>
+
+        <div class="story-dialogue">
+          "Solar wind speed just surged past 640 km/s. Interplanetary Magnetic Field (IMF) Bz dropped hard south to –14 nT. Planetary K-index spiked to 5.8 (G2-class geomagnetic storm)."
+        </div>
+
+        <p>Finn opens the heavy timber sauna door, steps out onto the snow-covered deck in nothing but wool socks, a beanie, and a steaming towel, and glances north over the frozen lake toward Hallingskarvet. He freezes. His jaw hits the deck planks.</p>
+
+        <p>He whips his head back inside and roars at the top of his lungs: <em>"Lads! Dienke! EVERYONE. Put your beers down. GET OUT HERE RIGHT NOW!"</em></p>
+
+        <p>Thirteen people scramble in pure chaos: slippers flying across the hallway, down parkas thrown over bare shoulders, bare socks sinking into deep powder. You step off the deck into the crisp mountain air and look up. There is no moon, no valley glow, no cars on Route 7. The entire northern sky has detonated into an eerie, luminous lime green.</p>
+
+        <p>Over the next forty minutes, the curtain starts to dance. Sheets of green light ripple silently across the ionosphere 100 kilometers above the plateau, folding like sheer silk in a cosmic gale, with violet and magenta needles flashing along the upper fringes. Steam pours off everyone's shoulders into the sub-zero air. Nobody speaks. Thirteen people standing shoulder to shoulder on the roof of Norway, watching solar particles burn against Earth's magnetic shield.</p>
+
+        <p>Seb takes a slow sip of cold beer, wipes the frost off his chin, and smiles: <em>"Right. Tomorrow at 10 AM, we kite under that exact same sun."</em></p>
+      </div>
+
+      <h3 class="section-title">Expedition Visuals: Hardangervidda Under Solar Wind</h3>
+      <p>What the night sky looks like when a coronal mass ejection reaches our mountain plateau:</p>
+
+      <div class="card-grid cols-2">
+        <div class="photo-feature">
+          <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1200&q=80" alt="Aurora Borealis emerald ribbon over snowy arctic peaks" loading="lazy" />
+          <div class="photo-caption">
+            <strong>The Hallingskarvet Curtain</strong>
+            <span>Active Kp 4.5 geomagnetic ribbon over snowy alpine ridgelines</span>
+          </div>
+        </div>
+        <div class="photo-feature">
+          <img src="https://images.unsplash.com/photo-1483347756197-71ef80e95f73?auto=format&fit=crop&w=1000&q=80" alt="Northern lights reflecting on frozen wilderness lake ice" loading="lazy" />
+          <div class="photo-caption">
+            <strong>Ustevatnet Ice Reflection</strong>
+            <span>Multi-layered green arcs mirrored across frozen plateau lake ice</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-feature">
+        <img src="https://images.unsplash.com/photo-1579033461380-adb47c3eb938?auto=format&fit=crop&w=1400&q=80" alt="Aurora borealis corona overhead explosion in dark night sky" loading="lazy" />
+        <div class="photo-caption">
+          <strong>The Zenith Corona (Kp 6+ Storm)</strong>
+          <span>Magnetic field lines converging directly overhead during sub-storm expansion</span>
+        </div>
+      </div>
+
+      <h3 class="section-title">Is It Visible From Our Cabins in Early April?</h3>
+      <p><strong>Yes, with clear skies and moderate solar activity.</strong> April 3–11 is the final golden window of the Norwegian aurora season. By late April and May, high-latitude twilight never fully fades (the "white nights"), making auroras invisible against daylight. But during our expedition week, the sun sets at ~20:30 CEST, nautical twilight finishes by 21:30, and <strong>deep astronomical night reigns from 22:15 to 04:00 CEST (over 5.5 hours of pitch-black sky)</strong>.</p>
+
+      <p>Furthermore, early April benefits from the <strong>Russell-McPherron effect</strong>: around the spring equinox, Earth’s magnetic dipole tilts in a way that maximizes magnetic reconnection between Earth’s field and the solar wind's interplanetary magnetic field (IMF). Geomagnetic storms are statistically <em>twice as frequent</em> in March/April than in January or February!</p>
+
+      <h3 class="section-title">Kp Index Scale at 60.5° North Latitude</h3>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Kp Index</th>
+              <th>Geomagnetic Level</th>
+              <th>What We See on Hardangervidda</th>
+              <th>Naked Eye Visibility</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Kp 1 – 2</strong></td>
+              <td>Quiet / Baseline</td>
+              <td>Oval remains confined north of 66°N (Tromsø/Lofoten). Dark starry sky at 1,200m.</td>
+              <td>Invisible to naked eye (long-exposure cameras can register faint green haze)</td>
+            </tr>
+            <tr>
+              <td><strong>Kp 3 – 3.7</strong></td>
+              <td>Unsettled</td>
+              <td>Faint green luminous arc hugging the northern horizon over Hallingskarvet ridge.</td>
+              <td>Subtle pale glow to naked eye; vibrant green on 3-second phone night mode</td>
+            </tr>
+            <tr>
+              <td><strong>Kp 4.0 – 4.7</strong></td>
+              <td>Active Storm</td>
+              <td>Distinct green auroral curtains rising 15°–25° into the northern sky with slow lateral drift.</td>
+              <td><strong>Clearly visible to the naked eye</strong> across dark Ustevatnet lake</td>
+            </tr>
+            <tr>
+              <td><strong>Kp 5.0 (G1)</strong></td>
+              <td>Minor Solar Storm</td>
+              <td>Dynamic waving ribbons and ray structures moving fast with violet and pink upper edges.</td>
+              <td><strong>Stunning, fast-dancing naked eye show</strong> lighting up the snowpack</td>
+            </tr>
+            <tr>
+              <td><strong>Kp 6.0+ (G2+)</strong></td>
+              <td>Moderate/Major Storm</td>
+              <td>All-sky auroral corona exploding directly overhead; intense green, red, and purple pillars.</td>
+              <td><strong>Full cosmic spectacle</strong> visible in every direction without even looking north</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tip-box">
+        <strong>The Secret Metric (Bz):</strong> Don't just watch the Kp number. Look at the <strong>IMF Bz</strong> reading on space weather apps. If Bz is negative (pointing south, e.g. –5 to –15 nT), Earth's magnetic doors are wide open, and auroras will ignite within 30 minutes even at modest solar wind speeds.
+      </div>
+
+      <h3 class="section-title">Live Aurora Tracking &amp; Alerts</h3>
+      <p>Download these free tools before arriving so we get alerted while relaxing in the cabin:</p>
+
+      <div class="card-grid cols-2">
+        <a class="embed-card" href="https://www.spaceweatherlive.com/en/auroral-activity/aurora-forecast.html" target="_blank" rel="noopener">
+          <div class="embed-body">
+            <div class="embed-source">SpaceWeatherLive · Real-Time Telemetry</div>
+            <div class="embed-title">Live Solar Wind &amp; Magnetometer Plots</div>
+            <div class="embed-desc">Real-time solar wind speed (km/s), density, and Bz polarity from DSCOVR satellite with instantaneous auroral oval mapping.</div>
+            <div class="embed-action">Open live monitors ↗</div>
+          </div>
+        </a>
+        <a class="embed-card" href="https://www.swpc.noaa.gov/products/aurora-30-minute-forecast" target="_blank" rel="noopener">
+          <div class="embed-body">
+            <div class="embed-source">NOAA SWPC · Space Weather Prediction Center</div>
+            <div class="embed-title">30-Minute Empirical Aurora Forecast</div>
+            <div class="embed-desc">Official US National Oceanic &amp; Atmospheric Administration short-term forecast map showing auroral intensity over Scandinavia.</div>
+            <div class="embed-action">View NOAA forecast ↗</div>
+          </div>
+        </a>
+      </div>
+
+      <h3 class="section-title">Night Sky Photography Cheat Sheet</h3>
+      <ul class="check-list">
+        <li><strong>iPhone / Android Night Mode:</strong> Set exposure to 3–5 seconds. Lean the phone against a ski boot, railing, or snow bank to keep it rock steady.</li>
+        <li><strong>Mirrorless / DSLR Manual Mode:</strong> Lens at maximum aperture (f/1.8 to f/2.8), ISO 1600–3200, shutter speed 2 to 5 seconds (shorter shutter keeps dancing ribbon details sharp).</li>
+        <li><strong>Manual Focus:</strong> Switch auto-focus to manual, zoom in on a bright star or distant radio tower on the ridge, and dial until pinpoint sharp.</li>
+        <li><strong>Spare Batteries in Warm Pockets:</strong> Lithium batteries drain in minutes at –8°C. Keep your spare batteries inside your inner fleece jacket until ready to shoot.</li>
+      </ul>
+
+      <div class="tab-bridge">
+        <a href="#schools" class="prev">← Kite Schools</a>
         <a href="#money" class="next">Next: Budget &amp; Shared Expenses ➔</a>
       </div>
     </section>
 
-    <!-- 7 MONEY -->
+    <!-- 8 MONEY -->
     <section id="money" class="tab-section">
       <h2 class="pane-heading">Budget &amp; Shared Expenses</h2>
       <p class="pane-lead">Estimated total spend sits between €1,100 and €1,350 per person for the eight-night expedition.</p>
@@ -1269,12 +1603,12 @@
       </div>
 
       <div class="tab-bridge">
-        <a href="#schools" class="prev">← Kite Schools</a>
+        <a href="#aurora" class="prev">← Northern Lights</a>
         <a href="#pack" class="next">Next: Gear &amp; Packing Checklist ➔</a>
       </div>
     </section>
 
-    <!-- 8 PACK LIST -->
+    <!-- 9 PACK LIST -->
     <section id="pack" class="tab-section">
       <h2 class="pane-heading">Gear &amp; Packing Checklist</h2>
       <p class="pane-lead">Sub-zero high plateau mountain environment with rapid weather transitions.</p>
@@ -1343,8 +1677,27 @@
   </footer>
 
   <script>
+    const headerImages = {
+      plan: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=75",
+      houses: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1600&q=75",
+      travel: "https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=1600&q=75",
+      kitesize: "https://images.unsplash.com/photo-1548777123-e216912df7d8?auto=format&fit=crop&w=1600&q=75",
+      rentals: "https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=1600&q=75",
+      schools: "https://images.unsplash.com/photo-1565992441121-4367c2967103?auto=format&fit=crop&w=1600&q=75",
+      aurora: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1600&q=75",
+      money: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=75",
+      pack: "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1600&q=75"
+    };
+
+    const siteHeader = document.querySelector("header.site-header");
     const tabs = Array.from(document.querySelectorAll("nav.tab-nav a"));
     const panes = Array.from(document.querySelectorAll("main section.tab-section"));
+
+    // Preload header background images for instantaneous switching
+    Object.values(headerImages).forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
 
     function activateTab(hash) {
       const targetId = (hash || "#plan").replace(/^#/, "");
@@ -1360,10 +1713,18 @@
         panes[0].classList.add("active");
       }
 
+      const activeKey = found ? targetId : "plan";
+
       tabs.forEach(tab => {
         const href = tab.getAttribute("href").replace(/^#/, "");
-        tab.classList.toggle("active", href === (found ? targetId : "plan"));
+        tab.classList.toggle("active", href === activeKey);
       });
+
+      // Switch top banner background image according to active page
+      const bg = headerImages[activeKey] || headerImages.plan;
+      if (siteHeader) {
+        siteHeader.style.backgroundImage = `url('${bg}')`;
+      }
 
       window.scrollTo({ top: 0, behavior: "instant" });
     }
