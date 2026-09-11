@@ -13,15 +13,14 @@
       --deep-surface: #0e2233;
       --ice: #f0f6f9;
       --snow: #ffffff;
-      --snow-subtle: #f6fafc;
+      --snow-subtle: #f5f8fa;
       --ink: #0d1b22;
       --muted: #5e7482;
-      --line: rgba(7, 21, 33, 0.09);
-      --line-dark: rgba(255, 255, 255, 0.12);
+      --line: rgba(7, 21, 33, 0.08);
       --ember: #ff5a1f;
-      --ember-soft: rgba(255, 90, 31, 0.1);
+      --ember-soft: rgba(255, 90, 31, 0.08);
       --glacier: #178a99;
-      --glacier-soft: rgba(23, 138, 153, 0.1);
+      --glacier-soft: rgba(23, 138, 153, 0.08);
       --card-radius: 14px;
       --measure: 46rem;
     }
@@ -43,7 +42,7 @@
     header.site-header {
       background: var(--deep);
       color: var(--ice);
-      padding: 2.2rem 1.4rem 0;
+      padding: 2.4rem 1.4rem 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
@@ -56,6 +55,7 @@
       font-size: 14px;
       color: #9cb5c2;
       margin: 0 0 0.5rem;
+      letter-spacing: 0.02em;
     }
 
     .header-meta strong {
@@ -64,7 +64,7 @@
 
     h1.site-title {
       font-family: "Bebas Neue", sans-serif;
-      font-size: clamp(2.4rem, 8vw, 3.8rem);
+      font-size: clamp(2.5rem, 8vw, 4rem);
       line-height: 0.95;
       letter-spacing: 0.02em;
       margin: 0 0 0.75rem;
@@ -78,7 +78,7 @@
     p.site-subtitle {
       font-family: "Instrument Serif", Georgia, serif;
       font-style: italic;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       line-height: 1.35;
       color: #dbe8ef;
       margin: 0 0 1.6rem;
@@ -101,9 +101,9 @@
     nav.tab-nav a {
       color: #9eb2be;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 14.5px;
       font-weight: 600;
-      padding: 0.8rem 0.85rem;
+      padding: 0.85rem 0.95rem;
       border-bottom: 3px solid transparent;
       white-space: nowrap;
       transition: color 0.15s ease, border-color 0.15s ease;
@@ -122,7 +122,7 @@
     main.content-pane {
       max-width: var(--measure);
       margin: 0 auto;
-      padding: 2.2rem 1.4rem 4rem;
+      padding: 2.4rem 1.4rem 4rem;
     }
 
     section.tab-section {
@@ -142,7 +142,7 @@
     /* Typography hierarchy */
     h2.pane-heading {
       font-family: "Bebas Neue", sans-serif;
-      font-size: 2.1rem;
+      font-size: 2.2rem;
       line-height: 1;
       letter-spacing: 0.02em;
       color: var(--deep);
@@ -150,13 +150,13 @@
     }
 
     p.pane-lead {
-      font-size: 16px;
+      font-size: 16.5px;
       color: var(--muted);
       margin: 0 0 1.8rem;
     }
 
     h3.section-title {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: var(--deep);
       margin: 2.4rem 0 0.8rem;
@@ -173,7 +173,7 @@
     .meta-text {
       font-size: 14px;
       color: var(--muted);
-      margin-top: -0.4rem;
+      margin-top: -0.3rem;
       margin-bottom: 1rem;
     }
 
@@ -205,9 +205,13 @@
       border-left: 4px solid var(--ember);
     }
 
+    .info-card.highlight-blue {
+      border-left: 4px solid var(--glacier);
+    }
+
     .info-card h4 {
       margin: 0 0 0.5rem;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       color: var(--deep);
     }
 
@@ -255,7 +259,7 @@
     .embed-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(7, 21, 33, 0.08);
-      border-color: rgba(255, 90, 31, 0.4);
+      border-color: rgba(255, 90, 31, 0.35);
     }
 
     @media (min-width: 580px) {
@@ -267,7 +271,7 @@
 
     .embed-thumb {
       width: 100%;
-      height: 170px;
+      height: 180px;
       object-fit: cover;
       background: var(--deep);
       display: block;
@@ -275,14 +279,14 @@
 
     @media (min-width: 580px) {
       .embed-thumb {
-        width: 220px;
-        min-width: 220px;
+        width: 230px;
+        min-width: 230px;
         height: auto;
       }
     }
 
     .embed-body {
-      padding: 1.1rem 1.25rem;
+      padding: 1.15rem 1.3rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -300,7 +304,7 @@
     }
 
     .embed-title {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--deep);
       margin: 0 0 0.35rem;
@@ -308,14 +312,14 @@
     }
 
     .embed-desc {
-      font-size: 14px;
+      font-size: 14.5px;
       color: var(--muted);
       line-height: 1.45;
-      margin: 0 0 0.5rem;
+      margin: 0 0 0.6rem;
     }
 
     .embed-action {
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 700;
       color: var(--ember);
       margin-top: auto;
@@ -352,7 +356,7 @@
     }
 
     table.data-table td {
-      padding: 0.8rem 1rem;
+      padding: 0.85rem 1rem;
       border-bottom: 1px solid var(--line);
       vertical-align: middle;
     }
@@ -370,32 +374,6 @@
       text-align: right;
     }
 
-    /* Action banners */
-    .action-banner {
-      background: var(--deep);
-      color: #ffffff;
-      border-radius: var(--card-radius);
-      padding: 1.2rem 1.4rem;
-      margin: 2.2rem 0 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .action-banner .action-label {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--ember);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .action-banner .action-text {
-      font-size: 15px;
-      line-height: 1.45;
-      color: #f0f6f9;
-    }
-
     /* Checklist */
     ul.check-list {
       list-style: none;
@@ -404,7 +382,7 @@
     }
 
     ul.check-list li {
-      padding: 0.7rem 0 0.7rem 2rem;
+      padding: 0.75rem 0 0.75rem 2rem;
       position: relative;
       border-bottom: 1px solid var(--line);
       font-size: 15px;
@@ -414,40 +392,57 @@
       content: "✓";
       position: absolute;
       left: 0.3rem;
-      top: 0.65rem;
+      top: 0.7rem;
       color: var(--glacier);
       font-weight: 700;
     }
 
-    /* People summary */
-    .people-summary {
+    /* Group summary card */
+    .group-card {
       background: #ffffff;
       border: 1px solid var(--line);
       border-radius: var(--card-radius);
-      padding: 1.2rem;
+      padding: 1.3rem;
       margin: 1.4rem 0;
+      box-shadow: 0 2px 8px rgba(7, 21, 33, 0.03);
     }
 
-    .people-row {
-      margin-bottom: 0.75rem;
+    .group-section {
+      margin-bottom: 1rem;
     }
 
-    .people-row:last-child {
+    .group-section:last-child {
       margin-bottom: 0;
     }
 
-    .people-label {
-      font-size: 13px;
+    .group-heading {
+      font-size: 12.5px;
       font-weight: 700;
       color: var(--muted);
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 0.3rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
     }
 
-    .people-names {
-      font-size: 15px;
+    .group-members {
+      font-size: 15.5px;
       color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* Friendly Callout Box */
+    .tip-box {
+      background: var(--ice);
+      border-left: 4px solid var(--glacier);
+      border-radius: 0 10px 10px 0;
+      padding: 1rem 1.2rem;
+      margin: 1.4rem 0;
+      font-size: 14.5px;
+      color: var(--deep);
+    }
+
+    .tip-box strong {
+      color: var(--glacier);
     }
 
     /* Source link list */
@@ -467,7 +462,7 @@
       border-radius: 8px;
       text-decoration: none;
       color: var(--ink);
-      font-size: 14.5px;
+      font-size: 14px;
       transition: border-color 0.15s ease, background-color 0.15s ease;
     }
 
@@ -522,35 +517,31 @@
     <!-- 1 PLAN -->
     <section id="plan" class="tab-section active">
       <h2 class="pane-heading">Expedition Plan</h2>
-      <p class="pane-lead">Eight nights across two base houses. Drive daily along Route 7 to follow the wind.</p>
+      <p class="pane-lead">Eight nights across two base cabins. Drive daily along Route 7 to follow the wind.</p>
 
-      <p>Hardangervidda sits between eastern and western Norwegian weather systems. When one valley is calm, another runs at 20 knots. Last spring the crew covered 100 kilometers in a single day across frozen lakes and rolling terrain.</p>
+      <p>Hardangervidda sits between eastern and western Norwegian weather systems. When one valley is calm, another runs at 20 knots. Last spring the crew covered 100 kilometers in a single day across frozen lakes and rolling terrain, coming back to wood fires, saunas, and great meals.</p>
 
       <div class="card-grid cols-2">
-        <div class="info-card highlight">
-          <span class="badge dark">House A · Ustaoset</span>
+        <div class="info-card highlight-blue">
+          <span class="badge soft">House A · Ustaoset</span>
           <h4>Mormorstølen</h4>
-          <p class="meta-text">Booked by Finn. Five bedrooms, two bathrooms, sauna. High comfort setup for five individuals.</p>
+          <p class="meta-text">Booked by Finn. Spacious alpine lodge with five private bedrooms, two bathrooms, and an electric sauna. Five riders.</p>
         </div>
         <div class="info-card highlight">
           <span class="badge ember">House B · Haugastøl</span>
-          <h4>Hegghytta (Max 8)</h4>
-          <p class="meta-text">Booked by Dienke. Four bedrooms, one bathroom. Exactly eight riders, beds not pre-assigned.</p>
+          <h4>Hegghytta</h4>
+          <p class="meta-text">Booked by Dienke. Warm, authentic mountain cabin located two minutes from Haugastøl Turistsenter. Eight riders.</p>
         </div>
       </div>
 
-      <div class="people-summary">
-        <div class="people-row">
-          <div class="people-label">House B Riders (Hegghytta · Eight Guests)</div>
-          <div class="people-names">Caro · Flora · Merel · Roelien · Dienke · Berend · Hanne · Pieter</div>
+      <div class="group-card">
+        <div class="group-section">
+          <div class="group-heading">House B Riders (Hegghytta · Eight Guests)</div>
+          <div class="group-members">Caro · Flora · Merel · Roelien · Dienke · Berend · Hanne · Pieter</div>
         </div>
-        <div class="people-row">
-          <div class="people-label">House A Riders (Mormorstølen · Five Guests)</div>
-          <div class="people-names">Finn · Sebastian · Stef · Enno · Cees</div>
-        </div>
-        <div class="people-row">
-          <div class="people-label">Capacity Policy</div>
-          <div class="people-names">House B is capped at 8 riders. House A has spare room up to 10 guests for any late addition such as André.</div>
+        <div class="group-section">
+          <div class="group-heading">House A Riders (Mormorstølen · Five Guests)</div>
+          <div class="group-members">Finn · Sebastian · Stef · Enno · Cees</div>
         </div>
       </div>
 
@@ -562,7 +553,7 @@
           <div class="embed-source">YouTube · Snowkite Hardangervidda</div>
           <div class="embed-title">Hardangervidda Snowkite Experience</div>
           <div class="embed-desc">Watch the terrain, endless white plateaus, and typical April riding conditions.</div>
-          <div class="embed-action">Open video ↗</div>
+          <div class="embed-action">Watch video ↗</div>
         </div>
       </a>
 
@@ -572,7 +563,7 @@
           <div class="embed-source">Haugastøl Turistsenter · Official Guide</div>
           <div class="embed-title">Snowkiting on Europe’s Premier Plateau</div>
           <div class="embed-desc">Overview of kite locations along Route 7, local safety regulations, and snowpack records.</div>
-          <div class="embed-action">View spot details ↗</div>
+          <div class="embed-action">Explore spot details ↗</div>
         </div>
       </a>
 
@@ -596,72 +587,34 @@
           <span class="source-host">haugastol.no ↗</span>
         </a>
       </div>
-
-      <div class="action-banner">
-        <div class="action-label">Next Action</div>
-        <div class="action-text">Review your cabin details in the Houses tab and confirm rental kit requests.</div>
-      </div>
     </section>
 
     <!-- 2 HOUSES -->
     <section id="houses" class="tab-section">
       <h2 class="pane-heading">Cabin Accommodations</h2>
-      <p class="pane-lead">Both properties are confirmed and reserved. Beds are not pre-assigned in advance.</p>
+      <p class="pane-lead">Both mountain houses are booked and confirmed. Plenty of comfortable space for everyone.</p>
 
       <h3 class="section-title">House B: Hegghytta (Haugastøl)</h3>
-      <p>Cozy traditional lodge situated two minutes from Haugastøl Turistsenter. Four bedrooms and one bathroom. Strictly limited to eight guests.</p>
+      <p>A classic Norwegian mountain cabin located right by Haugastøl Turistsenter, right at the foot of the plateau. Perfect base for tracking the wind each morning.</p>
 
       <a class="embed-card" href="https://www.airbnb.es/rooms/1462527939250507275?adults=6&amp;check_in=2027-04-03&amp;check_out=2027-04-11" target="_blank" rel="noopener">
         <img class="embed-thumb" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1462527939250507275/original/0e8255a7-bb44-48cf-93cb-20e2a1a5d956.jpeg?im_w=720" alt="Hegghytta Haugastøl Airbnb" />
         <div class="embed-body">
-          <div class="embed-source">Airbnb 1462527939250507275 · Host Jan-Erik</div>
-          <div class="embed-title">Hegghytta Cabin in Haugastøl</div>
-          <div class="embed-desc">Rating 4.67 (3 reviews) · 4 bedrooms · 4 beds listed · 1 bathroom · Guests bring linen.</div>
-          <div class="embed-action">View Airbnb listing ↗</div>
+          <div class="embed-source">Airbnb · Host Jan-Erik</div>
+          <div class="embed-title">Hegghytta Mountain Cabin in Haugastøl</div>
+          <div class="embed-desc">Traditional timber cabin with multiple cozy living spaces, fireplace, and scenic plateau access.</div>
+          <div class="embed-action">View on Airbnb ↗</div>
         </div>
       </a>
 
       <div class="info-card highlight" style="margin: 1.2rem 0;">
-        <span class="badge ember">House B Roster (Eight Guests)</span>
+        <span class="badge ember">House B Crew</span>
         <h4>Caro · Flora · Merel · Roelien · Dienke · Berend · Hanne · Pieter</h4>
-        <p class="meta-text" style="margin-bottom: 0;">Capacity configuration: Four bedrooms comfortably host three couples (Dienke &amp; Berend, Merel &amp; Roelien, Hanne &amp; Pieter) and two individuals (Caro &amp; Flora). Beds will not be pre-assigned before arrival.</p>
+        <p class="meta-text" style="margin-bottom: 0;">Four private bedrooms with comfortable sleeping space for all eight of us. Rooms will be chosen naturally when everyone arrives.</p>
       </div>
 
-      <div class="table-wrap">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>House B Parameter</th>
-              <th>Specification</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Total Confirmed Guests</td>
-              <td>Exactly 8 riders (strictly capped at 8)</td>
-            </tr>
-            <tr>
-              <td>Room Configuration</td>
-              <td>4 bedrooms across two levels</td>
-            </tr>
-            <tr>
-              <td>Sleeping Breakdown</td>
-              <td>3 double/queen setups for couples + twin/bunk beds for Caro and Flora</td>
-            </tr>
-            <tr>
-              <td>Bathroom Facility</td>
-              <td>1 shower and toilet. Staggered morning and post-ride queues apply</td>
-            </tr>
-            <tr>
-              <td>Linens &amp; Towels</td>
-              <td>Guests must pack their own bed sheets, pillowcases, and bath towels</td>
-            </tr>
-            <tr>
-              <td>End of Stay Cleaning</td>
-              <td>Self-cleaning mandatory before Sunday checkout</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="tip-box">
+        <strong>Cabin Note for Hegghytta:</strong> Like many authentic Norwegian cabins, please bring your own bed sheets, pillowcases, and bath towels for the week.
       </div>
 
       <a class="embed-card" href="https://maps.app.goo.gl/cbXsY8toEn8jiG7Y8" target="_blank" rel="noopener">
@@ -675,76 +628,42 @@
       </a>
 
       <h3 class="section-title">House A: Mormorstølen (Ustaoset)</h3>
-      <p>Spacious mountain home with five private rooms, two full bathrooms, and an electric sauna. Located 18 minutes east of the Fagerheim launch.</p>
+      <p>A beautiful mountain home with five private bedrooms, two full bathrooms, and an electric sauna. Located in Ustaoset, 18 minutes east of Fagerheim.</p>
 
       <a class="embed-card" href="https://www.airbnb.ch/rooms/11332520" target="_blank" rel="noopener">
         <img class="embed-thumb" src="https://a0.muscache.com/im/pictures/miso/Hosting-11332520/original/35698b0b-7c6c-4a10-9d34-1428effd90dc.jpeg?im_w=720" alt="Mormorstølen Ustaoset Airbnb" />
         <div class="embed-body">
-          <div class="embed-source">Airbnb 11332520 · Host Paal</div>
+          <div class="embed-source">Airbnb · Host Paal</div>
           <div class="embed-title">Mormorstølen Cabin in Ustaoset</div>
-          <div class="embed-desc">Rating 4.94 (50 reviews) · 5 bedrooms · 8 beds · 2 bathrooms · Private sauna.</div>
-          <div class="embed-action">View Airbnb listing ↗</div>
+          <div class="embed-desc">Guest Favourite mountain lodge with panoramic views, spacious lounge, private sauna, and two full bathrooms.</div>
+          <div class="embed-action">View on Airbnb ↗</div>
         </div>
       </a>
 
-      <div class="info-card highlight" style="margin: 1.2rem 0;">
-        <span class="badge dark">House A Roster (Five Guests)</span>
+      <div class="info-card highlight-blue" style="margin: 1.2rem 0;">
+        <span class="badge soft">House A Crew</span>
         <h4>Finn · Sebastian · Stef · Enno · Cees</h4>
-        <p class="meta-text" style="margin-bottom: 0;">Capacity configuration: Five private bedrooms for five individuals. Ample room and beds, zero crowd pressure. King room and extra bunks remain unoccupied unless a late joining rider commits.</p>
-      </div>
-
-      <div class="table-wrap">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>House A Parameter</th>
-              <th>Specification</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Total Confirmed Guests</td>
-              <td>5 individuals</td>
-            </tr>
-            <tr>
-              <td>Bedrooms &amp; Beds</td>
-              <td>5 bedrooms with 8 beds in total (1 king, 1 double, 4 twin, 1 bunk)</td>
-            </tr>
-            <tr>
-              <td>Bathroom Facility</td>
-              <td>2 full bathrooms plus sauna</td>
-            </tr>
-            <tr>
-              <td>Base Price Benchmark</td>
-              <td>400 CHF per person based on 6 riders (~€510 recalculated for 5 riders)</td>
-            </tr>
-          </tbody>
-        </table>
+        <p class="meta-text" style="margin-bottom: 0;">Five private bedrooms for the five riders, two full bathrooms, and sauna. Ample space to relax after long mountain sessions.</p>
       </div>
 
       <div class="source-list">
         <a class="source-item" href="https://www.airbnb.ch/rooms/11332520" target="_blank" rel="noopener">
-          <span class="source-title">Mormorstølen Listing &amp; Guest Reviews</span>
+          <span class="source-title">Mormorstølen Listing &amp; Photos</span>
           <span class="source-host">airbnb.ch ↗</span>
         </a>
         <a class="source-item" href="https://www.airbnb.es/rooms/1462527939250507275" target="_blank" rel="noopener">
-          <span class="source-title">Hegghytta Listing Details</span>
+          <span class="source-title">Hegghytta Listing &amp; Photos</span>
           <span class="source-host">airbnb.es ↗</span>
         </a>
-      </div>
-
-      <div class="action-banner">
-        <div class="action-label">Next Action</div>
-        <div class="action-text">Dienke confirms the exact double bed count with Jan-Erik to verify three double mattresses exist.</div>
       </div>
     </section>
 
     <!-- 3 TRAVEL -->
     <section id="travel" class="tab-section">
       <h2 class="pane-heading">Flights &amp; Mountain Route</h2>
-      <p class="pane-lead">Flights to Oslo Gardermoen (OSL), followed by a 3.5 hour mountain drive along Route 7.</p>
+      <p class="pane-lead">Flights to Oslo Gardermoen (OSL), followed by a scenic 3.5 hour mountain drive along Route 7.</p>
 
-      <p>Riders arrive from Barcelona, Amsterdam, and Zurich. Coordinated arrival times keep car rental costs down and prevent long waits at the terminal.</p>
+      <p>Riders arrive from Barcelona, Amsterdam, and Zurich. We will coordinate arrival windows so cars can head up to the mountains smoothly together.</p>
 
       <div class="table-wrap">
         <table class="data-table">
@@ -779,6 +698,23 @@
         </table>
       </div>
 
+      <h3 class="section-title">Car Rental: Getaround App (Recommended)</h3>
+      <p>A convenient and fast option to rent cars in Oslo is Getaround. With Getaround Connect, you unlock the car via Bluetooth directly with your smartphone. No counter queues, no paperwork at the desk, and comprehensive AXA insurance is included.</p>
+
+      <a class="embed-card" href="https://play.google.com/store/apps/details?id=com.c4mprod.voiturelib&amp;hl=en" target="_blank" rel="noopener">
+        <img class="embed-thumb" src="https://no.getaround.com/packs/images/app/assets/images/shared/facebook/og.bf9ebb3db6bff8d0.jpg" alt="Getaround car rental app" />
+        <div class="embed-body">
+          <div class="embed-source">Getaround · Google Play &amp; iOS App</div>
+          <div class="embed-title">Getaround Car Rental: Keyless Peer-to-Peer Carsharing</div>
+          <div class="embed-desc">Rent directly from your smartphone with Getaround Connect. Includes AXA comprehensive insurance. Rates are up to 30 percent cheaper than airport agencies.</div>
+          <div class="embed-action">Open on Google Play ↗</div>
+        </div>
+      </a>
+
+      <div class="tip-box">
+        <strong>Pro Tip:</strong> If using Getaround, install the app and complete your driver license &amp; ID verification a few days before the trip. That way your profile is pre-approved and you can drive away immediately when you land in Oslo.
+      </div>
+
       <h3 class="section-title">Road Logistics &amp; Navigation</h3>
 
       <a class="embed-card" href="https://www.google.com/maps/dir/Oslo+Airport/Haugast%C3%B8l" target="_blank" rel="noopener">
@@ -786,7 +722,7 @@
         <div class="embed-body">
           <div class="embed-source">Google Maps · Navigation Route</div>
           <div class="embed-title">Oslo Airport (OSL) to Haugastøl Drive</div>
-          <div class="embed-desc">240 km scenic drive via Route 7. Winter tires and convoy awareness required in April.</div>
+          <div class="embed-desc">240 km scenic drive via Route 7. Winter tires and convoy awareness in April.</div>
           <div class="embed-action">Open route in Google Maps ↗</div>
         </div>
       </a>
@@ -800,25 +736,6 @@
           <div class="embed-action">Check road status ↗</div>
         </div>
       </a>
-
-      <h3 class="section-title">Car Rental: Getaround App (Recommended)</h3>
-      <p>Skip airport desk queues and counter paperwork. Getaround operates keyless peer-to-peer car rental throughout Oslo and at the airport. You walk straight to the vehicle, unlock it with Bluetooth on your smartphone, and drive away.</p>
-
-      <a class="embed-card" href="https://play.google.com/store/apps/details?id=com.c4mprod.voiturelib&amp;hl=en" target="_blank" rel="noopener">
-        <img class="embed-thumb" src="https://no.getaround.com/packs/images/app/assets/images/shared/facebook/og.bf9ebb3db6bff8d0.jpg" alt="Getaround car rental app" />
-        <div class="embed-body">
-          <div class="embed-source">Getaround · Google Play &amp; iOS App</div>
-          <div class="embed-title">Getaround Car Rental: Keyless Peer-to-Peer Carsharing</div>
-          <div class="embed-desc">Rent directly from your smartphone with Getaround Connect. Includes AXA comprehensive insurance. Rates are up to 30 percent cheaper than airport agencies.</div>
-          <div class="embed-action">Open on Google Play ↗</div>
-        </div>
-      </a>
-
-      <div class="info-card highlight" style="margin: 1.2rem 0;">
-        <span class="badge ember">Crucial Verification Tip</span>
-        <h4>Complete ID &amp; License Verification Before Travel</h4>
-        <p class="meta-text" style="margin-bottom: 0;">Getaround requires identity and driver license approval before your first reservation. Download the app and complete verification several days before departure so your account is ready to unlock vehicles immediately on arrival in Oslo.</p>
-      </div>
 
       <div class="source-list">
         <a class="source-item" href="https://play.google.com/store/apps/details?id=com.c4mprod.voiturelib&amp;hl=en" target="_blank" rel="noopener">
@@ -838,11 +755,6 @@
           <span class="source-host">vy.no ↗</span>
         </a>
       </div>
-
-      <div class="action-banner">
-        <div class="action-label">Next Action</div>
-        <div class="action-text">Post your proposed flight arrival window in WhatsApp so we can allocate rental vehicle groups.</div>
-      </div>
     </section>
 
     <!-- 4 KITE SIZE GUIDE -->
@@ -857,17 +769,17 @@
         <div class="info-card">
           <span class="badge dark">Single-Skin Foil</span>
           <h4>Flysurfer Peak / Ozone Explore</h4>
-          <p class="meta-text">Ultra-compact (two fit in one daypack), zero bladder freeze or burst risk, massive instant depower on 5-line B-Safe system. Sized 2 sizes smaller than water tubes.</p>
+          <p class="meta-text">Ultra-compact (two fit easily into a daypack), zero bladder freeze or puncture risk, and massive instant depower on 5-line safety. Sized 2 sizes smaller than water tubes.</p>
         </div>
         <div class="info-card">
           <span class="badge soft">Closed-Cell Foil</span>
           <h4>Flysurfer Soul / Ozone Subzero</h4>
-          <p class="meta-text">High aerodynamic glide, strong upwind drive, floaty hangtime. Ram-air cells maintain shape without inflation. Sized 1 size smaller than water tubes.</p>
+          <p class="meta-text">High aerodynamic glide, strong upwind drive, floaty hangtime. Ram-air cells maintain wing shape without manual pumping. Sized 1 size smaller than water tubes.</p>
         </div>
         <div class="info-card">
           <span class="badge ember">Inflatable Tube (LEI)</span>
           <h4>Cabrinha / Ozone Catalyst</h4>
-          <p class="meta-text">Familiar water feel, stable in gusty turbulence. Requires manual pump in sub-zero winds; valve plastics stiffen and fabric can abrade on ice crust.</p>
+          <p class="meta-text">Familiar water feel, stable in gusty wind. Requires pumping on the snow, but great if you already own a 6 m² or 8 m² tube kite at home.</p>
         </div>
       </div>
 
@@ -887,7 +799,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>6 to 8 kts (Light lull)</td>
+              <td>6 to 8 kts (Light breeze)</td>
               <td>8 to 11 m²</td>
               <td>11 m²</td>
               <td>11 m²</td>
@@ -948,7 +860,7 @@
             </tr>
             <tr>
               <td>Warm wet spring slush (afternoon melt)</td>
-              <td>High resistance</td>
+              <td>Higher resistance</td>
               <td>Shift one column to the right (add 2 m² or use closed-cell foil)</td>
             </tr>
           </tbody>
@@ -983,11 +895,6 @@
           <span class="source-title">The Kite Spot: Complete Guide to Snowkiting Gear &amp; Physics</span>
           <span class="source-host">thekitespot.com ↗</span>
         </a>
-      </div>
-
-      <div class="action-banner">
-        <div class="action-label">Next Action</div>
-        <div class="action-text">Identify your target quiver size based on your weight and check available rentals in the next tab.</div>
       </div>
     </section>
 
@@ -1033,7 +940,7 @@
             <tr>
               <td>Inflatable Tube Kites</td>
               <td>Ozone Catalyst and Enduro (6, 8 m²)</td>
-              <td>High-wind survival and familiar water handling</td>
+              <td>High-wind stability and familiar water handling</td>
             </tr>
             <tr>
               <td>Accessories Included</td>
@@ -1054,12 +961,12 @@
         <div class="embed-body">
           <div class="embed-source">Kitekurs.no · Haugastøl Hub</div>
           <div class="embed-title">Independent Snowkite Equipment Hire</div>
-          <div class="embed-desc">Official confirmation: "Ja, vi leier ut utstyr. Oppgi erfaring og dato." Brand new 2026/2027 Cabrinha and Ozone tube kites (4 to 15 m²).</div>
+          <div class="embed-desc">Official confirmation: "Ja, vi leier ut utstyr. Oppgi erfaring og dato." Brand new Cabrinha and Ozone tube kites (4 to 15 m²).</div>
           <div class="embed-action">Open rental FAQ ↗</div>
         </div>
       </a>
 
-      <p class="meta-text">Phone: +47 452 92 084. Email: post@kitekurs.no. Coordinate weekday collection in advance.</p>
+      <p class="meta-text">Phone: +47 452 92 084. Email: post@kitekurs.no.</p>
 
       <h3 class="section-title">3. Geilo Ski Shop (Equipment Delivery to Haugastøl)</h3>
       <p>If you prefer to bring your own kites on the airplane but want to avoid flying heavy skis or snowboards, Geilo Ski Shop delivers pre-ordered skis and boards directly to Haugastøl Turistsenter.</p>
@@ -1077,11 +984,6 @@
           <span class="source-title">Kitesurfing.no Regional Daily Rental Benchmark (1,000 NOK/day)</span>
           <span class="source-host">kitesurfing.no ↗</span>
         </a>
-      </div>
-
-      <div class="action-banner">
-        <div class="action-label">Next Action</div>
-        <div class="action-text">Send your rider weight and gear selection to Lenka at Upwind to reserve your quiver.</div>
       </div>
     </section>
 
@@ -1144,11 +1046,6 @@
           <span class="source-title">Norwegian Trekking Association (DNT) Finse Kiting Guide</span>
           <span class="source-host">dnt.no ↗</span>
         </a>
-      </div>
-
-      <div class="action-banner">
-        <div class="action-label">Next Action</div>
-        <div class="action-text">If anyone in your party desires a weekend refresher course, book early with Kitekurs or Vindskolen.</div>
       </div>
     </section>
 
@@ -1230,11 +1127,6 @@
           <span class="source-host">airbnb.ch ↗</span>
         </a>
       </div>
-
-      <div class="action-banner">
-        <div class="action-label">Next Action</div>
-        <div class="action-text">Dienke forwards the final Hegghytta booking receipt to finalize the per-person cabin split.</div>
-      </div>
     </section>
 
     <!-- 8 PACK LIST -->
@@ -1289,11 +1181,6 @@
           <span class="source-title">Mobile Road &amp; Wind Apps for Offline Plateau Navigation</span>
           <span class="source-host">haugastol.no ↗</span>
         </a>
-      </div>
-
-      <div class="action-banner">
-        <div class="action-label">Next Action</div>
-        <div class="action-text">Confirm your sports luggage allowance with your airline before booking flights.</div>
       </div>
     </section>
 
