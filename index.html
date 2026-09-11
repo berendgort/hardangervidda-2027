@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hardangervidda 2027 — snowkite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --deep: #06141f;
+      --ice: #eef6f9;
+      --ember: #ff5a1f;
+      --ink: #0d1b22;
+      --muted: #5a7380;
+      --line: rgba(7, 21, 34, 0.12);
+      --card: #f4f8fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Outfit, system-ui, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.45;
+    }
+    header {
+      background: var(--deep);
+      color: var(--ice);
+      padding: 1.4rem 1.2rem 0;
+    }
+    header h1 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(2rem, 7vw, 3.2rem);
+      letter-spacing: 0.02em;
+      margin: 0 0 0.2rem;
+      line-height: 0.95;
+    }
+    header h1 em { color: var(--ember); font-style: normal; }
+    header p { margin: 0 0 1rem; color: #b7c9d1; font-size: 0.95rem; }
+    nav {
+      display: flex;
+      gap: 0.15rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    nav a {
+      color: #9eb0b8;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 0.7rem 0.85rem;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+    }
+    nav a.on { color: #fff; border-bottom-color: var(--ember); }
+    main { max-width: 720px; margin: 0 auto; padding: 1.2rem; }
+    section { display: none; }
+    section.on { display: block; }
+    h2 { font-size: 1.15rem; margin: 1.4rem 0 0.5rem; }
+    h2:first-child { margin-top: 0.2rem; }
+    p, li { font-size: 0.98rem; }
+    .muted { color: var(--muted); }
+    .cards { display: grid; gap: 0.8rem; }
+    @media (min-width: 640px) { .cards.two { grid-template-columns: 1fr 1fr; } }
+    article {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+    }
+    article h3 { margin: 0 0 0.35rem; font-size: 1rem; }
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: var(--deep);
+      color: #fff;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      margin-bottom: 0.4rem;
+    }
+    .tag.warn { background: var(--ember); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.6rem 0 1rem; }
+    th, td { text-align: left; padding: 0.4rem 0.45rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    a { color: #0b6b7c; }
+    ul { padding-left: 1.15rem; }
+    .bar {
+      background: var(--deep);
+      color: var(--ice);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      margin: 1rem 0;
+    }
+    .bar strong { color: var(--ember); }
+    footer { max-width: 720px; margin: 0 auto; padding: 0 1.2rem 2rem; color: var(--muted); font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hardanger<em>vidda</em> 2027</h1>
+    <p>Snowkite · Sat 3 – Sun 11 Apr · two houses booked · 13 people</p>
+    <nav>
+      <a href="#plan" class="on">Plan</a>
+      <a href="#houses">Houses</a>
+      <a href="#travel">Travel</a>
+      <a href="#kite">Kite</a>
+      <a href="#money">Money</a>
+      <a href="#pack">Pack</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="plan" class="on">
+      <p>House all week. Drive to the wind. Optional one-night hut toward Finse / the glacier — no camping kit. Last year: one day <strong>100 km</strong>.</p>
+      <div class="cards two">
+        <article>
+          <span class="tag">House A</span>
+          <h3>Mormorstølen · Ustaoset</h3>
+          <p>Finn booked. Sauna. Max 10 / 5 rooms / 2 baths. Pieter + Hanne, Finn, Sebastian, Stef, Enno, Cees.</p>
+        </article>
+        <article>
+          <span class="tag">House B</span>
+          <h3>Hegghytta · Haugastøl</h3>
+          <p>Dienke booked. 4 rooms / 1 bath. Berend + Dienke, Merel + Roel, Carola, Floor.</p>
+        </article>
+      </div>
+      <p><strong>Couples:</strong> Dienke/Berend · Merel/Roel · Pieter/Hanne.<br />
+      <strong>Single:</strong> Carola, Floor, Finn, Sebastian, Stef, Enno, Cees.</p>
+      <p class="muted">Maybe: André. Chat is English. Max 2 per room.</p>
+      <p>
+        <a href="https://youtu.be/OWEIHxDPYTg">Video</a> ·
+        <a href="https://findpenguins.com/7duu8yipnk6qm/footprint/69e53aacb20b92-52669066">Last year</a> ·
+        <a href="https://www.haugastol.no/en/snowkiting">Haugastøl</a>
+      </p>
+    </section>
+
+    <section id="houses">
+      <h2>A · Mormorstølen — comfortable</h2>
+      <p><a href="https://www.airbnb.ch/rooms/11332520">Airbnb 11332520</a> · Paal · 4.94 / 50 · 10 guests · 5 rooms · 8 beds · 2 baths · sauna · 18 min to Fagerheim · 400 CHF pp @ 6 ≈ €425 house-only (recalc at 7).</p>
+      <table>
+        <tr><th>Room</th><th>Bed</th><th>Who</th></tr>
+        <tr><td>1</td><td>King</td><td>Pieter + Hanne</td></tr>
+        <tr><td>2</td><td>Double</td><td>Empty, or one person alone</td></tr>
+        <tr><td>3</td><td>2 singles</td><td>Two of Finn / Sebastian / Stef / Enno / Cees</td></tr>
+        <tr><td>4</td><td>Bunk</td><td>Leave empty</td></tr>
+        <tr><td>5</td><td>2 singles</td><td>Two singles</td></tr>
+      </table>
+      <p>Couple gets a real king. Bunk stays empty. 2 baths for 7 is fine.</p>
+
+      <h2>B · Hegghytta — rooms OK, 1 shower</h2>
+      <p><a href="https://www.airbnb.es/rooms/1462527939250507275?adults=6&amp;check_in=2027-04-03&amp;check_out=2027-04-11">Airbnb …7275</a> · Jan-Erik · 4.67 / 3 · 10 guests · <strong>4 rooms · 4 beds · 1 bath</strong>. Host did not list bed types. 2 min to Haugastøl Turistsenter. Bring <strong>sheets + towels</strong>. You clean. No sauna. € still with Dienke.</p>
+      <table>
+        <tr><th>Need</th><th>Call</th></tr>
+        <tr><td>2 couple rooms</td><td>Unknown until we see the 4 rooms</td></tr>
+        <tr><td>Carola + Floor</td><td>4 rooms / 6 people can work</td></tr>
+        <tr><td>Showers after kite</td><td>1 bath — the squeeze</td></tr>
+      </table>
+      <p><a href="https://maps.app.goo.gl/cbXsY8toEn8jiG7Y8">Map of the two Haugastøl pins</a></p>
+    </section>
+
+    <section id="travel">
+      <p><strong>BCN / AMS / ZRH → Oslo (OSL)</strong> → rent cars → ~3.5 h to the plateau → reverse.</p>
+      <p>Everyone flies from a different city. Align landings so cars are not waiting half a day.</p>
+      <table>
+        <tr><th>From</th><th>Who</th><th>Ballpark</th></tr>
+        <tr><td>BCN</td><td>Berend, Dienke + extras</td><td>€100–200 + sports bag</td></tr>
+        <tr><td>AMS</td><td></td><td>Similar + bag</td></tr>
+        <tr><td>ZRH</td><td>Finn / Sebastian?</td><td>Finn last year 580 CHF</td></tr>
+      </table>
+      <p>Book your own ski / sports bag. Two houses = more cars. RV7 can run winter convoys — check the Haugastøl app.</p>
+      <ul>
+        <li><a href="https://www.google.com/maps/dir/Oslo+Airport/Haugast%C3%B8l">OSL → Haugastøl</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Ustaoset+Norway">Ustaoset (House A)</a></li>
+        <li><a href="https://www.haugastol.no/en/wind-apps">Wind + road app</a></li>
+      </ul>
+    </section>
+
+    <section id="kite">
+      <h2>Wind · April · Finse</h2>
+      <p>Avg <strong>10.7 kts</strong> · gust 16.5 · <strong>41% ≥ 11 kts</strong>. Hyper-local — cars are the plan. <a href="https://www.windfinder.com/windstatistics/finse_ulvik_hordaland">Windfinder</a> · <a href="https://www.haugastol.no/en/spots">Spots</a></p>
+      <p>Beginner-friendly (Finn). Tubes work. Foil / single-skin (Peak, Soul — examples) pack smaller and dump safer on tour.</p>
+      <p>Last year Finn: <strong>75% on 6 m²</strong>, rest on <strong>11 m²</strong>.</p>
+
+      <h2>Rent · Upwind / Fagerheim</h2>
+      <p>Lenka, 7 Sep: <strong>5 000 NOK ≈ €463 / week</strong> = 2 kites + harness + skis or snowboard. Own boots + helmet. No hold until we send how many + kg. Souls = light. Peaks / hybrids = stronger.</p>
+      <p>Peak stock: <strong>5 / 6 / 8 / 11</strong>. Soul: 8 / 10 / 12 / 15.</p>
+      <p>Tubes on site: <a href="https://kitekurs.no/sporsmalogsvar/">Kitekurs.no</a> at Haugastøl weekends 3–4 &amp; 10–11 Apr · +47 452 92 084.</p>
+
+      <h2>Snowkite size · Peak · hardpack</h2>
+      <p class="muted">Not a water chart. Official Peak bands @ 75 kg, scaled by weight. Slush: one column heavier. New to snow: one size down. +15 kg ≈ one size up.</p>
+      <table>
+        <tr><th>Wind</th><th>55–65</th><th>65–75</th><th>75–85</th><th>85–95 kg</th></tr>
+        <tr><td>8–11 Apr avg</td><td>8</td><td>8–11</td><td>11</td><td>11</td></tr>
+        <tr><td>11–15 sweet</td><td>6</td><td>6–8</td><td>8</td><td>8–11</td></tr>
+        <tr><td>15–20 solid</td><td>5</td><td>5–6</td><td>6</td><td>6–8</td></tr>
+      </table>
+      <p>One shared rack works if weights spread and not everyone launches at once. Bottleneck = the <strong>8 m</strong>.</p>
+      <div class="bar">Need a rented kite? Reply: name + kg + ski/board. Own tube kites? Skip.</div>
+    </section>
+
+    <section id="money">
+      <table>
+        <tr><th></th><th>Lean</th><th>Comfort</th></tr>
+        <tr><td>Flight RT</td><td>~€100</td><td>€150–200</td></tr>
+        <tr><td>Sports bag</td><td>~€80</td><td>€120–150 · or rent skis</td></tr>
+        <tr><td>Ground last year</td><td></td><td>~€910 (old cheap house + cars + food)</td></tr>
+        <tr><td>House A only</td><td></td><td>~€425 pp @ 6 — do not add on top of 910</td></tr>
+        <tr><td>House B</td><td></td><td>Dienke has the invoice</td></tr>
+        <tr><td>Kit week</td><td></td><td>5 000 NOK ≈ €463 for 2 kites + harness + skis</td></tr>
+        <tr><td><strong>All-in band</strong></td><td></td><td><strong>~€1.1–1.3k</strong> if ground stays near last year</td></tr>
+      </table>
+      <p>Open: Hegghytta € · car split · reply to Upwind with kg.</p>
+    </section>
+
+    <section id="pack">
+      <ul>
+        <li>Skis or board + <strong>boots</strong> (bring boots even if you rent skis)</li>
+        <li>Helmet, harness, goggles + spare lens</li>
+        <li>Thin kite gloves + thick warm gloves</li>
+        <li>Shell + merino + puffy for breaks</li>
+        <li>Hegghytta: <strong>sheets + towels</strong></li>
+        <li>Touring / glacier push: skins or split or snowshoes — wind can die, 10+ km walk</li>
+      </ul>
+      <p>Group: first aid, Leatherman, kite repair, shovel / tow strap per car, Haugastøl wind app offline.</p>
+      <p class="muted">Stay 150 m from the road. Don’t kite at reindeer. <a href="https://www.haugastol.no/en/snowkiting">Rules</a></p>
+    </section>
+  </main>
+
+  <footer>Hardangervidda snowkite · 3–11 Apr 2027 · updated 11 Sep 2026</footer>
+
+  <script>
+    const tabs = [...document.querySelectorAll("nav a")];
+    const panes = [...document.querySelectorAll("main section")];
+    function show(id) {
+      const name = (id || "plan").replace(/^#/, "");
+      panes.forEach((p) => p.classList.toggle("on", p.id === name));
+      tabs.forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + name));
+    }
+    window.addEventListener("hashchange", () => show(location.hash));
+    show(location.hash);
+  </script>
+</body>
+</html>
