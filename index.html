@@ -22,7 +22,7 @@
       --glacier: #178a99;
       --glacier-soft: rgba(23, 138, 153, 0.08);
       --card-radius: 14px;
-      --measure: 46rem;
+      --measure: 76rem;
     }
 
     * { box-sizing: border-box; }
@@ -49,7 +49,6 @@
       background: var(--snow-subtle);
       -webkit-font-smoothing: antialiased;
       overflow-wrap: break-word;
-      word-break: break-word;
     }
 
     img, video {
@@ -269,6 +268,11 @@
 
     p {
       margin: 0 0 1rem;
+      max-width: 58rem;
+    }
+
+    ul.check-list, p.pane-lead {
+      max-width: 58rem;
     }
 
     /* Seamless Inline Hyperlinks */
@@ -381,6 +385,12 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .card-grid.cols-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 960px) {
+      .card-grid.cols-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
@@ -474,8 +484,8 @@
 
     @media (min-width: 580px) {
       .embed-thumb {
-        width: clamp(170px, 30%, 230px);
-        min-width: 170px;
+        width: clamp(180px, 26%, 280px);
+        min-width: 180px;
         height: auto;
       }
     }
@@ -529,19 +539,48 @@
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       overscroll-behavior-x: contain;
-      margin: 1.2rem 0 1.8rem;
+      margin: 1.4rem 0 2rem;
       border: 1px solid var(--line);
       border-radius: var(--card-radius);
-      background: var(--snow);
+      background: #ffffff;
       max-width: 100%;
+      box-shadow: 0 1px 6px rgba(7, 21, 33, 0.03);
+    }
+
+    .table-wrap::-webkit-scrollbar {
+      height: 7px;
+    }
+
+    .table-wrap::-webkit-scrollbar-track {
+      background: #eef3f6;
+      border-radius: 4px;
+    }
+
+    .table-wrap::-webkit-scrollbar-thumb {
+      background: #b5c7d0;
+      border-radius: 4px;
+    }
+
+    .table-wrap::-webkit-scrollbar-thumb:hover {
+      background: var(--muted);
     }
 
     table.data-table {
       width: 100%;
-      min-width: 500px;
       border-collapse: collapse;
-      font-size: 14.5px;
+      font-size: 14px;
+      line-height: 1.5;
       text-align: left;
+    }
+
+    table.data-table th,
+    table.data-table td {
+      padding: 0.85rem 1.1rem;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      word-break: normal;
+      overflow-wrap: normal;
+      hyphens: manual;
     }
 
     table.data-table th {
@@ -551,27 +590,51 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid var(--line);
-    }
-
-    table.data-table td {
-      padding: 0.85rem 1rem;
-      border-bottom: 1px solid var(--line);
-      vertical-align: middle;
+      white-space: nowrap;
     }
 
     table.data-table tr:last-child td {
       border-bottom: none;
     }
 
-    table.data-table td.num {
+    table.data-table td.num,
+    table.data-table th.num {
       text-align: right;
+      white-space: nowrap;
       font-variant-numeric: tabular-nums;
     }
 
-    table.data-table th.num {
-      text-align: right;
+    table.data-table td a,
+    table.data-table th a {
+      white-space: nowrap;
+    }
+
+    table.data-table .badge {
+      white-space: nowrap;
+      display: inline-block;
+      margin-top: 0.35rem;
+      font-size: 11px;
+      padding: 0.2rem 0.5rem;
+    }
+
+    table.data-table .action-btn {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      background: #f0f6fa;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ember);
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+
+    table.data-table .action-btn:hover {
+      background: var(--ember);
+      color: #ffffff;
+      border-color: var(--ember);
     }
 
     /* Checklist */
@@ -606,6 +669,17 @@
       margin: 1.4rem 0;
       box-shadow: 0 2px 8px rgba(7, 21, 33, 0.03);
       min-width: 0;
+    }
+
+    @media (min-width: 768px) {
+      .group-card {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .group-card .group-section {
+        margin-bottom: 0;
+      }
     }
 
     .group-section {
@@ -652,6 +726,7 @@
       display: grid;
       gap: 0.6rem;
       margin: 1.4rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
     }
 
     .source-item {
@@ -703,10 +778,14 @@
 
     .photo-feature img {
       width: 100%;
-      height: clamp(190px, 42vw, 290px);
+      height: clamp(210px, 38vw, 420px);
       object-fit: cover;
       display: block;
       transition: transform 0.4s ease;
+    }
+
+    .card-grid .photo-feature img {
+      height: clamp(190px, 26vw, 300px);
     }
 
     .photo-caption {
@@ -729,9 +808,15 @@
     /* Aurora Stat Grid */
     .aurora-stat-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
       margin: 1.4rem 0 1.8rem;
+    }
+
+    @media (min-width: 768px) {
+      .aurora-stat-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
 
     .aurora-stat-grid > * {
@@ -819,6 +904,7 @@
       line-height: 1.68;
       color: #cbdce7;
       margin-bottom: 1rem;
+      max-width: 54rem;
     }
 
     .story-card p:last-child {
@@ -831,6 +917,7 @@
       margin: 1.1rem 0;
       font-style: italic;
       color: #f1f8fc;
+      max-width: 54rem;
     }
 
     /* Touch-Safe Fine Pointer Hover States */
@@ -1177,12 +1264,12 @@
       </div>
 
       <div class="table-wrap">
-        <table class="data-table">
+        <table class="data-table" style="min-width: 620px;">
           <thead>
             <tr>
-              <th>Bedroom</th>
-              <th>Bed Distribution</th>
-              <th>Capacity &amp; Layout</th>
+              <th style="min-width: 140px;">Bedroom</th>
+              <th style="min-width: 240px;">Bed Distribution</th>
+              <th style="min-width: 240px;">Capacity &amp; Layout</th>
             </tr>
           </thead>
           <tbody>
@@ -1279,13 +1366,13 @@
       <p>Riders arrive from Barcelona, Amsterdam, and Zurich. We coordinate arrival windows so cars can head up to our <a href="#houses">cabins in Ustaoset and Haugastøl</a> together. If you plan to bring ski bags on your flight, review sports luggage options against <a href="#rentals">on-site ski rentals</a> and check the <a href="#pack">packing list</a>.</p>
 
       <div class="table-wrap">
-        <table class="data-table">
+        <table class="data-table" style="min-width: 720px;">
           <thead>
             <tr>
-              <th>Departure City</th>
-              <th>Riders</th>
-              <th>Estimated Return Fare</th>
-              <th>Airlines</th>
+              <th style="min-width: 160px;">Departure City</th>
+              <th style="min-width: 260px;">Riders</th>
+              <th style="min-width: 150px;" class="num">Estimated Return Fare</th>
+              <th style="min-width: 150px;">Airlines</th>
             </tr>
           </thead>
           <tbody>
@@ -1336,12 +1423,12 @@
       </div>
 
       <div class="table-wrap">
-        <table class="data-table">
+        <table class="data-table" style="min-width: 820px;">
           <thead>
             <tr>
-              <th>Luggage Item (per rider)</th>
-              <th>Typical Volume / Size</th>
-              <th>Vehicle Impact &amp; Placement Strategy</th>
+              <th style="min-width: 210px;">Luggage Item (per rider)</th>
+              <th style="min-width: 200px;">Typical Volume / Size</th>
+              <th style="min-width: 410px;">Vehicle Impact &amp; Placement Strategy</th>
             </tr>
           </thead>
           <tbody>
@@ -1378,13 +1465,13 @@
       <p>Based on our 13 confirmed riders across 3 departure cities, our crew requires <strong>5 rental cars</strong> (or 4 cars if one crew rents a 7/9-seater passenger van or vehicles with exterior roof boxes):</p>
 
       <div class="table-wrap">
-        <table class="data-table">
+        <table class="data-table" style="min-width: 840px;">
           <thead>
             <tr>
-              <th>Departure Hub</th>
-              <th>Riders</th>
-              <th>Vehicles Needed</th>
-              <th>Allocation &amp; Gear Strategy</th>
+              <th style="min-width: 170px;">Departure Hub</th>
+              <th style="min-width: 240px;">Riders</th>
+              <th style="min-width: 140px;" class="num">Vehicles Needed</th>
+              <th style="min-width: 290px;">Allocation &amp; Gear Strategy</th>
             </tr>
           </thead>
           <tbody>
@@ -1540,14 +1627,14 @@
       <p class="meta-text">Calculated from Flysurfer official factory specifications scaled by rider weight: v proportional to sqrt(weight / 75 kg).</p>
 
       <div class="table-wrap">
-        <table class="data-table">
+        <table class="data-table" style="min-width: 700px;">
           <thead>
             <tr>
-              <th>Wind Speed</th>
-              <th>55 to 65 kg</th>
-              <th>65 to 75 kg</th>
-              <th>75 to 85 kg</th>
-              <th>85 to 95+ kg</th>
+              <th style="min-width: 190px;">Wind Speed</th>
+              <th style="min-width: 125px;">55 to 65 kg</th>
+              <th style="min-width: 125px;">65 to 75 kg</th>
+              <th style="min-width: 125px;">75 to 85 kg</th>
+              <th style="min-width: 135px;">85 to 95+ kg</th>
             </tr>
           </thead>
           <tbody>
@@ -1592,12 +1679,12 @@
 
       <h3 class="section-title">Surface Condition Modifiers</h3>
       <div class="table-wrap">
-        <table class="data-table">
+        <table class="data-table" style="min-width: 680px;">
           <thead>
             <tr>
-              <th>Snow Surface Type</th>
-              <th>Friction Level</th>
-              <th>Sizing Adjustment</th>
+              <th style="min-width: 240px;">Snow Surface Type</th>
+              <th style="min-width: 150px;">Friction Level</th>
+              <th style="min-width: 290px;">Sizing Adjustment</th>
             </tr>
           </thead>
           <tbody>
@@ -1698,15 +1785,15 @@
       <!-- COMPARISON MATRIX TABLE -->
       <h3 class="section-title">Rental Options Comparison Matrix</h3>
       <div class="table-wrap">
-        <table class="data-table">
+        <table class="data-table" style="min-width: 1060px;">
           <thead>
             <tr>
-              <th>Provider &amp; Hub</th>
-              <th>Equipment Included</th>
-              <th>Base Location</th>
-              <th>Estimated Cost</th>
-              <th>Best For</th>
-              <th>Booking Action</th>
+              <th style="min-width: 170px;">Provider &amp; Hub</th>
+              <th style="min-width: 230px;">Equipment Included</th>
+              <th style="min-width: 160px;">Base Location</th>
+              <th style="min-width: 150px;" class="num">Estimated Cost</th>
+              <th style="min-width: 230px;">Best For</th>
+              <th style="min-width: 120px;">Booking Action</th>
             </tr>
           </thead>
           <tbody>
@@ -1716,31 +1803,31 @@
               <td>Haukeliseter Mountain Hub</td>
               <td>Quiver rate on FareHarbor</td>
               <td>Experienced riders wanting high-performance mountain foils</td>
-              <td><a href="https://fareharbor.com/embeds/book/kitesurfing/items/315664/availability/2137788270/book/?full-items=yes" target="_blank" rel="noopener">FareHarbor Online ↗</a></td>
+              <td><a href="https://fareharbor.com/embeds/book/kitesurfing/items/315664/availability/2137788270/book/?full-items=yes" target="_blank" rel="noopener" class="action-btn">FareHarbor ↗</a></td>
             </tr>
             <tr>
               <td><strong>2. Upwind Snowkiting</strong></td>
               <td>2 Kites (Peak/Soul) + harness + bar + skis or snowboard</td>
               <td>Fagerheim Fjellstugu (Route 7)</td>
-              <td>5,000 NOK (~€463) / week</td>
+              <td class="num">5,000 NOK (~€463) / wk</td>
               <td>Turnkey setup without flying heavy sports luggage</td>
-              <td><a href="mailto:booking@upwindsnowkiting.com">Email / Phone ↗</a></td>
+              <td><a href="mailto:booking@upwindsnowkiting.com" class="action-btn">Email / Phone ↗</a></td>
             </tr>
             <tr>
               <td><strong>3. Kitekurs.no</strong></td>
               <td>Cabrinha &amp; Ozone tube kites (4–15 m²) + bar + harness</td>
               <td>Haugastøl Turistsenter (House B)</td>
-              <td>Weekend &amp; daily rates</td>
+              <td class="num">Weekend &amp; daily rates</td>
               <td>Riders wanting familiar water LEI kites near House B</td>
-              <td><a href="mailto:post@kitekurs.no">Email / Phone ↗</a></td>
+              <td><a href="mailto:post@kitekurs.no" class="action-btn">Email / Phone ↗</a></td>
             </tr>
             <tr>
               <td><strong>4. Geilo Ski Shop</strong></td>
               <td>Alpine skis, touring skis with skins, snowboards, boots</td>
               <td>Delivered to Haugastøl / Cabins</td>
-              <td>~1,200 to 2,000 NOK / week</td>
+              <td class="num">~1,200–2,000 NOK / wk</td>
               <td>Riders bringing own kites who want skis delivered</td>
-              <td><a href="https://www.geiloskishop.no/en/home" target="_blank" rel="noopener">Online Pre-order ↗</a></td>
+              <td><a href="https://www.geiloskishop.no/en/home" target="_blank" rel="noopener" class="action-btn">Pre-order ↗</a></td>
             </tr>
           </tbody>
         </table>
@@ -1777,12 +1864,12 @@
       </div>
 
       <div class="table-wrap">
-        <table class="data-table">
+        <table class="data-table" style="min-width: 760px;">
           <thead>
             <tr>
-              <th>Recommended Kite</th>
-              <th>Technology &amp; Design</th>
-              <th>Terrain, Wind &amp; Best Use</th>
+              <th style="min-width: 190px;">Recommended Kite</th>
+              <th style="min-width: 210px;">Technology &amp; Design</th>
+              <th style="min-width: 360px;">Terrain, Wind &amp; Best Use</th>
             </tr>
           </thead>
           <tbody>
@@ -1837,12 +1924,12 @@
       </div>
 
       <div class="table-wrap">
-        <table class="data-table">
+        <table class="data-table" style="min-width: 760px;">
           <thead>
             <tr>
-              <th>Gear Type</th>
-              <th>Available Models &amp; Sizes</th>
-              <th>Suitability &amp; Advantages</th>
+              <th style="min-width: 190px;">Gear Type</th>
+              <th style="min-width: 210px;">Available Models &amp; Sizes</th>
+              <th style="min-width: 360px;">Suitability &amp; Advantages</th>
             </tr>
           </thead>
           <tbody>
@@ -1907,12 +1994,12 @@
       </div>
 
       <div class="table-wrap">
-        <table class="data-table">
+        <table class="data-table" style="min-width: 760px;">
           <thead>
             <tr>
-              <th>Gear Category</th>
-              <th>Available Models &amp; Sizes</th>
-              <th>Suitability &amp; Notes</th>
+              <th style="min-width: 190px;">Gear Category</th>
+              <th style="min-width: 220px;">Available Models &amp; Sizes</th>
+              <th style="min-width: 350px;">Suitability &amp; Notes</th>
             </tr>
           </thead>
           <tbody>
@@ -1972,12 +2059,12 @@
       </div>
 
       <div class="table-wrap">
-        <table class="data-table">
+        <table class="data-table" style="min-width: 760px;">
           <thead>
             <tr>
-              <th>Equipment Category</th>
-              <th>Rental Selection</th>
-              <th>Expedition Advantage</th>
+              <th style="min-width: 200px;">Equipment Category</th>
+              <th style="min-width: 220px;">Rental Selection</th>
+              <th style="min-width: 340px;">Expedition Advantage</th>
             </tr>
           </thead>
           <tbody>
@@ -2105,63 +2192,63 @@
       <!-- RANKED COURSE OPTIONS COMPARISON TABLE -->
       <h3 class="section-title">Course Options at a Glance (Ranked for Our Group)</h3>
       <div class="table-wrap">
-        <table class="data-table">
+        <table class="data-table" style="min-width: 1100px;">
           <thead>
             <tr>
-              <th>Rank &amp; Provider</th>
-              <th>Course Format &amp; Duration</th>
-              <th>Base &amp; Proximity</th>
-              <th>Estimated Cost</th>
-              <th>Equipment Included</th>
-              <th>Best For / Group Verdict</th>
-              <th>Action</th>
+              <th style="min-width: 160px;">Rank &amp; Provider</th>
+              <th style="min-width: 195px;">Course Format &amp; Duration</th>
+              <th style="min-width: 160px;">Base &amp; Proximity</th>
+              <th style="min-width: 150px;">Estimated Cost</th>
+              <th style="min-width: 185px;">Equipment Included</th>
+              <th style="min-width: 270px;">Best For / Group Verdict</th>
+              <th style="min-width: 110px;">Action</th>
             </tr>
           </thead>
           <tbody>
             <tr style="background: rgba(255, 90, 31, 0.04);">
-              <td><strong>1. Kitekurs.no &amp; Haugastøl</strong><br /><span class="badge ember" style="font-size: 0.72rem; padding: 0.15rem 0.4rem;">Top Pick for Learners</span></td>
+              <td><strong>1. Kitekurs.no &amp; Haugastøl</strong><br /><span class="badge ember">Top Pick for Learners</span></td>
               <td><strong>Custom Private Group Progression</strong><br />(3 to 5 Days Weekday Coaching for 5 riders)</td>
               <td>Haugastøl Turistsenter<br /><strong>650m from House B</strong> (2 min walk)</td>
-              <td class="num">Custom Group Quote<br />(~4,500–6,500 NOK / person)</td>
+              <td>Custom Group Quote<br />(~4,500–6,500 NOK / person)</td>
               <td>Complete kite quiver, bar, harness, helmet. Skis delivered to door.</td>
               <td><strong>Floor, Merel, Roel, Carola, Hanne.</strong> Maximum convenience, zero morning commute, wind-adaptive scheduling, and official <em>Vindgaranti</em>.</td>
-              <td><a href="#school-kitekurs">View Profile ↓</a></td>
+              <td><a href="#school-kitekurs" class="action-btn">View Profile ↓</a></td>
             </tr>
             <tr>
-              <td><strong>2. Upwind Snowkiting</strong><br /><span class="badge soft" style="font-size: 0.72rem; padding: 0.15rem 0.4rem;">Top Alternative</span></td>
+              <td><strong>2. Upwind Snowkiting</strong><br /><span class="badge soft">Top Alternative</span></td>
               <td><strong>Multi-Day Plateau Progression Camp</strong><br />(1-Day, 2-Day, or Full-Week Group Camp)</td>
               <td>Fagerheim Base (Route 7) &amp; Ustaoset Hub<br />15 min from House B</td>
-              <td class="num">1-Day: ~2,500 NOK<br />2-Day: ~4,200 NOK<br />Camp: Custom</td>
+              <td>1-Day: ~2,500 NOK<br />2-Day: ~4,200 NOK<br />Camp: Custom Quote</td>
               <td>Flysurfer foils &amp; Ozone tubes, bar, harness, safety leash.</td>
               <td><strong>Learners wanting deep plateau immersion.</strong> Pre-existing connection with Lenka Simkova (House C host); trains on the same plateau where experienced crew rides.</td>
-              <td><a href="#school-upwind">View Profile ↓</a></td>
+              <td><a href="#school-upwind" class="action-btn">View Profile ↓</a></td>
             </tr>
             <tr>
-              <td><strong>3. Vindskolen.no / Fluid</strong><br /><span class="badge" style="font-size: 0.72rem; padding: 0.15rem 0.4rem;">Weekend Starter</span></td>
+              <td><strong>3. Vindskolen.no / Fluid</strong><br /><span class="badge">Weekend Starter</span></td>
               <td><strong>2-Day Weekend Foundation Clinic</strong><br />(Fri evening indoor theory + Sat/Sun practical)</td>
               <td>Haugastøl Turistsenter<br />650m from House B</td>
-              <td class="num">1-Day: From 3,420 NOK<br />2-Day: From 3,750 NOK</td>
+              <td>1-Day: From 3,420 NOK<br />2-Day: From 3,750 NOK</td>
               <td>Complete kite gear, safety bar, harness.</td>
               <td><strong>Riders wanting a fast 2-day foundation.</strong> Great structured weekend intro, but leaves weekdays unguided unless extending with private hours.</td>
-              <td><a href="#school-vindskolen">View Profile ↓</a></td>
+              <td><a href="#school-vindskolen" class="action-btn">View Profile ↓</a></td>
             </tr>
             <tr style="background: rgba(23, 138, 153, 0.04);">
-              <td><strong>4. Haugastøl 1000 MOH</strong><br /><span class="badge dark" style="font-size: 0.72rem; padding: 0.15rem 0.4rem;">For Experienced Crew</span></td>
+              <td><strong>4. Haugastøl 1000 MOH</strong><br /><span class="badge dark">For Experienced Crew</span></td>
               <td><strong>Backcountry Mentorship &amp; Coaching</strong><br />(Daily spot strategy with Bjørn Kaupang)</td>
               <td>Haugastøl Turistsenter &amp; Route 7<br />Central corridor hub</td>
-              <td class="num">Informal advice free;<br />Private guide on request</td>
+              <td>Informal advice free;<br />Private guide on request</td>
               <td>Bring own gear or rent high-performance foils.</td>
               <td><strong>Berend, Dienke, Pieter, Finn, Seb, Stef, Enno, Cees.</strong> Daily spot choice, avalanche terrain awareness, GPS tracking, and route-finding to glacier edge.</td>
-              <td><a href="#school-kaupang">View Profile ↓</a></td>
+              <td><a href="#school-kaupang" class="action-btn">View Profile ↓</a></td>
             </tr>
             <tr>
-              <td><strong>5. Skikite Finse 1222</strong><br /><span class="badge dark" style="font-size: 0.72rem; padding: 0.15rem 0.4rem;">Glacier Specialty</span></td>
+              <td><strong>5. Skikite Finse 1222</strong><br /><span class="badge dark">Glacier Specialty</span></td>
               <td><strong>3-Day High-Mountain Alpine Camp</strong><br />(Glacier plateau wilderness training)</td>
               <td>Finse Station (1,222m elevation)<br />Train only from Haugastøl</td>
-              <td class="num">~3,950 NOK<br />+ train tickets + lodging</td>
+              <td>~3,950 NOK<br />+ train tickets + lodging</td>
               <td>High mountain kites, harness, safety systems.</td>
               <td><strong>Standalone glacier adventure.</strong> Extraordinary alpine scenery, but logistically detached from the cabin cars. Best as a future specialty trip.</td>
-              <td><a href="#school-skikite">View Profile ↓</a></td>
+              <td><a href="#school-skikite" class="action-btn">View Profile ↓</a></td>
             </tr>
           </tbody>
         </table>
@@ -2183,12 +2270,12 @@
       </div>
 
       <div class="table-wrap">
-        <table class="data-table">
+        <table class="data-table" style="min-width: 820px;">
           <thead>
             <tr>
-              <th>Curriculum Stage</th>
-              <th>Skills &amp; Milestones</th>
-              <th>Expedition Advantage for Our 5 Learners</th>
+              <th style="min-width: 210px;">Curriculum Stage</th>
+              <th style="min-width: 270px;">Skills &amp; Milestones</th>
+              <th style="min-width: 340px;">Expedition Advantage for Our 5 Learners</th>
             </tr>
           </thead>
           <tbody>
@@ -2481,13 +2568,13 @@
 
       <h3 class="section-title">Kp Index Scale at 60.5° North Latitude</h3>
       <div class="table-wrap">
-        <table class="data-table">
+        <table class="data-table" style="min-width: 800px;">
           <thead>
             <tr>
-              <th>Kp Index</th>
-              <th>Geomagnetic Level</th>
-              <th>What We See on Hardangervidda</th>
-              <th>Naked Eye Visibility</th>
+              <th style="min-width: 130px;">Kp Index</th>
+              <th style="min-width: 170px;">Geomagnetic Level</th>
+              <th style="min-width: 280px;">What We See on Hardangervidda</th>
+              <th style="min-width: 220px;">Naked Eye Visibility</th>
             </tr>
           </thead>
           <tbody>
@@ -2573,13 +2660,13 @@
       <p>We keep shared expenses completely transparent and straightforward. Flight fares are booked individually, cabin and car costs are shared equally within each base, and groceries are pooled for collective cooking. Check <a href="#travel">travel options</a> and <a href="#houses">cabin details</a> for underlying details.</p>
 
       <div class="table-wrap">
-        <table class="data-table">
+        <table class="data-table" style="min-width: 840px;">
           <thead>
             <tr>
-              <th>Expense Category</th>
-              <th>Lean Estimate</th>
-              <th>Comfort Estimate</th>
-              <th>Notes &amp; Allocation</th>
+              <th style="min-width: 200px;">Expense Category</th>
+              <th style="min-width: 130px;" class="num">Lean Estimate</th>
+              <th style="min-width: 140px;" class="num">Comfort Estimate</th>
+              <th style="min-width: 370px;">Notes &amp; Allocation</th>
             </tr>
           </thead>
           <tbody>
